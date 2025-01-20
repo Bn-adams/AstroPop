@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasePlant
   m_EditorClassIdentifier: 
   plantName: 
-  icon: {fileID: 1614689866, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
+  hotbarIcon: {fileID: -566347900, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
   plantPrefab: {fileID: 0}
   growthTime: 0
   growthStage1: {fileID: -566347900, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
@@ -22,3 +22,4 @@ MonoBehaviour:
   growthStage4: {fileID: 1614689866, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
   waterLevel: 0
   CO2: 0
+  oxygenProduce: 10
