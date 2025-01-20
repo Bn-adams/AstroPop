@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plant : MonoBehaviour
+[CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
+public class Plant : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string plantName;           
+    public Sprite hotbarIcon;               
+    public GameObject plantPrefab;    
+    public float growthTime;          
+    public Sprite growthStage1;     
+    public Sprite growthStage2;     
+    public Sprite growthStage3;     
+    public Sprite growthStage4;
+    public float waterLevel = 0;
+    public float CO2 = 0;
+    public float oxygenProduce = 10;
 }
