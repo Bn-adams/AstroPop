@@ -24,9 +24,13 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         // Check for the 'E' key press and call a function if the player is in range
+        if (isInteractableInRange && Input.GetKeyDown(KeyCode.Q))
+        {
+            InteractQ();
+        }
         if (isInteractableInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Interact();
+            InteractE();
         }
     }
 
@@ -60,9 +64,14 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void Interact()
+    void InteractQ()
     {
         // Placeholder function for the interaction logic
-        Debug.Log("Interact button pressed.");
+        Debug.Log("Interact Q button pressed.");
+    }
+    void InteractE()
+    {
+        // Placeholder function for the interaction logic
+        Debug.Log("Interact E button pressed.");
     }
 }
