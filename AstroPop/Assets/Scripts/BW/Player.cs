@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Hotbar hotbar;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Item"))
+        {
+            WorldItem worldItem = collision.collider.GetComponent<WorldItem>();
+            hotbar.PickupItem(worldItem.item);
+        }
     }
 }
