@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantGrow : MonoBehaviour
+public class PlantGrow : MonoBehaviour, IInteractable
 {
     public Item plantItem;
     public Plant plant;
+    public Hotbar hotbar;
+    public Plant hotbarPlant;
     private SpriteRenderer spriteRenderer;
     private Sprite plantStage1;
     private Sprite plantStage2;
@@ -16,57 +18,92 @@ public class PlantGrow : MonoBehaviour
     private float currentWaterLevel = 0f; // Reset water level
 
     public Plant plantedPlant;
+    private bool seedIsPlanted = false;
+    private bool IsHarvestable = false;
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        plantStage1 = plantedPlant.growthStage1;
-        plantStage2 = plantedPlant.growthStage2;
-        plantStage3 = plantedPlant.growthStage3;
-        plantStage4 = plantedPlant.growthStage4;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        plantTime += Time.deltaTime;
+        if (seedIsPlanted)
+        {
+            IsHarvestable = false;
+            plantTime += Time.deltaTime;
 
-        if (plantTime > plantedPlant.growthTime / 4)
-        {
-            spriteRenderer.sprite = plantStage1;
-        }
-        if( plantTime > plantedPlant.growthTime / 4 * 2)
-        {
-            spriteRenderer.sprite = plantStage2;
-        }
-        if (plantTime > plantedPlant.growthTime / 4 * 3)
-        {
-            spriteRenderer.sprite = plantStage3;
-        }
+            if (plantTime > plantedPlant.growthTime / 4)
+            {
+                spriteRenderer.sprite = plantStage1;
+            }
+            if (plantTime > plantedPlant.growthTime / 4 * 2)
+            {
+                spriteRenderer.sprite = plantStage2;
+            }
+            if (plantTime > plantedPlant.growthTime / 4 * 3)
+            {
+                spriteRenderer.sprite = plantStage3;
+            }
 
-        if (plantTime > plantedPlant.growthTime / 4 * 4)
-        {
-            spriteRenderer.sprite = plantStage4;
-        }
+            if (plantTime > plantedPlant.growthTime / 4 * 4)
+            {
+                spriteRenderer.sprite = plantStage4;
+                IsHarvestable = true;
+            }
 
-        if (spriteRenderer.sprite == plantStage3)
-        {
-            // This is conditional to say when the plant is fully grown, could be a bool
             
         }
     }
 
-    public void PlantSeed(Plant plant)
+    public void PlantSeed()
     {
-        plantedPlant = plant;
-        plantTime = 0f;       
-        currentGrowthTime = 0f; // Reset growth time
-        currentWaterLevel = 0f; // Reset water level
+        if (!seedIsPlanted)
+        {
+            if (hotbar.item is Plant plant)
+            {
+                hotbarPlant = plant;
+                plantedPlant = hotbarPlant;
+            }
+
+            if (plantedPlant != null && hotbarPlant != null)
+            {
+                plantedPlant.growthTime = hotbarPlant.growthTime;
+            }
+            else
+            {
+                Debug.LogWarning("Either plantedPlant or hotbarPlant is null!");
+            }
+
+            plantTime = 0;
+
+            plantStage1 = plantedPlant.growthStage1;
+            plantStage2 = plantedPlant.growthStage2;
+            plantStage3 = plantedPlant.growthStage3;
+            plantStage4 = plantedPlant.growthStage4;
+
+            seedIsPlanted = true;
+            hotbar.RemoveItem();
+        }
     }
-    public void PlantPickup()
+    public void Harvest()
     {
-
+        if (IsHarvestable)
+        {
+            seedIsPlanted = false;
+        }
     }
 
+    public void InteractQ()
+    {
+        Harvest();
+    }
+    public void InteractE()
+    {
+        
+        PlantSeed();
+    }
 
 }

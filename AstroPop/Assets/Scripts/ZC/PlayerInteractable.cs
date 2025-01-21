@@ -52,6 +52,7 @@ public class PlayerInteraction : MonoBehaviour
             interactable = collision.GetComponent<IInteractable>();
 
 
+
             isInteractableInRange = true;
 
             // Make the HUD visible if it's assigned

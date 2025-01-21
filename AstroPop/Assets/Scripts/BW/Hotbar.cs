@@ -8,7 +8,7 @@ public class Hotbar : MonoBehaviour
     public Item item;
     public Image itemImage;
     public SpriteRenderer itemRenderer;
-    private bool itemInSlot = false;
+
     private string itemInSlotName;
 
     public void PickupItem(Item pickupItem)
@@ -32,7 +32,11 @@ public class Hotbar : MonoBehaviour
     {
         if (!IsSlotEmpty())
         {
-            
+            item = null;
+            // Set all the relevant hotbar variables
+
+            itemImage.sprite = null;
+            SetImageAlpha(0f);
         }
     }
 
@@ -44,7 +48,7 @@ public class Hotbar : MonoBehaviour
     public bool IsSlotEmpty()
     {
         // Checks wether slot is empty and returns true if it is
-        return !itemInSlot;    
+        return item == null;     
     }
 
     public void SetImageAlpha(float alpha)
