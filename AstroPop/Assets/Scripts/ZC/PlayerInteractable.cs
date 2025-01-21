@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    
     // Reference to the HUD Canvas GameObject
     public GameObject interactionHUD;
 
