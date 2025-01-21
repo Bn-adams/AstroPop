@@ -8,7 +8,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public Plant plant;
     public Hotbar hotbar;
     public Plant hotbarPlant;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private Sprite plantStage1;
     private Sprite plantStage2;
     private Sprite plantStage3;
@@ -20,10 +20,12 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public Plant plantedPlant;
     private bool seedIsPlanted = false;
     private bool IsHarvestable = false;
+
+    public OxygenBar oxyBar;
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+      
         
     }
 
@@ -35,7 +37,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             IsHarvestable = false;
             plantTime += Time.deltaTime;
 
-            if (plantTime > plantedPlant.growthTime / 4)
+            if (plantTime < plantedPlant.growthTime / 4)
             {
                 spriteRenderer.sprite = plantStage1;
             }
@@ -92,7 +94,10 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         if (IsHarvestable)
         {
+            oxyBar.oxygen += plantedPlant.oxygenProduce;
             seedIsPlanted = false;
+            plantedPlant = null;
+            spriteRenderer.sprite = null;
         }
     }
 
