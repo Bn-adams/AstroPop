@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlantGrow : MonoBehaviour
 {
+    public Item plantItem;
+    public Plant plant;
     private SpriteRenderer spriteRenderer;
     private Sprite plantStage1;
     private Sprite plantStage2;
@@ -29,20 +31,20 @@ public class PlantGrow : MonoBehaviour
     {
         plantTime += Time.deltaTime;
 
-        if (plantTime > 10f)
+        if (plantTime > plant.growthTime / 4)
         {
             spriteRenderer.sprite = plantStage1;
         }
-        if( plantTime > 20f)
+        if( plantTime > plant.growthTime / 4 * 2)
         {
             spriteRenderer.sprite = plantStage2;
         }
-        if (plantTime > 30f)
+        if (plantTime > plant.growthTime / 4 + plant.growthTime / 4 * 2)
         {
             spriteRenderer.sprite = plantStage3;
         }
 
-        if (plantTime > 40f)
+        if (plantTime > plant.growthTime / 4 + plant.growthTime / 4 * 3)
         {
             spriteRenderer.sprite = plantStage4;
         }

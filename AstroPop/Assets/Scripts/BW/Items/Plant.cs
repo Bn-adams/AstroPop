@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
-public class Plant : ScriptableObject
-{
-    public string plantName;           
-    public Sprite hotbarIcon;               
+public class Plant : Item
+{             
     public GameObject plantPrefab;    
     public float growthTime;          
     public Sprite growthStage1;     
