@@ -6,9 +6,12 @@ public class PlayerInteraction : MonoBehaviour
     // Reference to the HUD Canvas GameObject
     public GameObject interactionHUD;
 
+    IInteractable interactable;
+
     // Flag to track if the player is in range of an interactable object
     private bool isInteractableInRange = false;
-
+    private bool QButtonDown = false;
+    private bool EButtonDown = false;
     void Start()
     {
         // Ensure the HUD is initially hidden if it's assigned
@@ -33,13 +36,22 @@ public class PlayerInteraction : MonoBehaviour
         {
             InteractE();
         }
+        //if (Input.GetKeyDown(KeyCode.Q)) QButtonDown = true;
+        //if (Input.GetKeyUp(KeyCode.Q)) QButtonDown = false;
+
+        //if (Input.GetKeyDown(KeyCode.E)) EButtonDown = true;
+        //if (Input.GetKeyUp(KeyCode.E)) EButtonDown = false;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the collided object has the "Interactable" tag
-        if (other.CompareTag("Interactable"))
+        if (collision.CompareTag("Interactable"))
         {
+            // Makes the variable "interactable" be assigned to the current object your near
+            interactable = collision.GetComponent<IInteractable>();
+
+
             isInteractableInRange = true;
 
             // Make the HUD visible if it's assigned
@@ -50,10 +62,10 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D collision)
     {
         // Check if the player exits the "Interactable" area
-        if (other.CompareTag("Interactable"))
+        if (collision.CompareTag("Interactable"))
         {
             isInteractableInRange = false;
 
@@ -65,15 +77,19 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    // Interactions
     void InteractQ()
     {
-        // Placeholder function for the interaction logic
-        Debug.Log("Interact Q button pressed.");
-        
+        if (interactable != null && isInteractableInRange)
+        {
+            interactable.InteractQ();
+        }
     }
     void InteractE()
     {
-        // Placeholder function for the interaction logic
-        Debug.Log("Interact E button pressed.");
+        if (interactable != null && isInteractableInRange)
+        {
+            interactable.InteractE();
+        }
     }
 }
