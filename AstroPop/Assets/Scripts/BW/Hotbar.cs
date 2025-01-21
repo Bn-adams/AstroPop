@@ -19,7 +19,7 @@ public class Hotbar : MonoBehaviour
             // Set all the relevant hotbar variables
            
             itemImage.sprite = item.hotbarIcon;
-            SetImageAlpha(1f);
+            SetImageAlpha(1f); 
 
         }
         else

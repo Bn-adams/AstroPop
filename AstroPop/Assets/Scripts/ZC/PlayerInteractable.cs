@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    
     // Reference to the HUD Canvas GameObject
     public GameObject interactionHUD;
 
@@ -68,6 +69,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         // Placeholder function for the interaction logic
         Debug.Log("Interact Q button pressed.");
+        
     }
     void InteractE()
     {

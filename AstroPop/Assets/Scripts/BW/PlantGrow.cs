@@ -31,20 +31,20 @@ public class PlantGrow : MonoBehaviour
     {
         plantTime += Time.deltaTime;
 
-        if (plantTime > plant.growthTime / 4)
+        if (plantTime > plantedPlant.growthTime / 4)
         {
             spriteRenderer.sprite = plantStage1;
         }
-        if( plantTime > plant.growthTime / 4 * 2)
+        if( plantTime > plantedPlant.growthTime / 4 * 2)
         {
             spriteRenderer.sprite = plantStage2;
         }
-        if (plantTime > plant.growthTime / 4 + plant.growthTime / 4 * 2)
+        if (plantTime > plantedPlant.growthTime / 4 * 3)
         {
             spriteRenderer.sprite = plantStage3;
         }
 
-        if (plantTime > plant.growthTime / 4 + plant.growthTime / 4 * 3)
+        if (plantTime > plantedPlant.growthTime / 4 * 4)
         {
             spriteRenderer.sprite = plantStage4;
         }
