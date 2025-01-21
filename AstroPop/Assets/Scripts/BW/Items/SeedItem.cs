@@ -9,8 +9,8 @@ public class SeedItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sR = GetComponent<SpriteRenderer>();
-        sR.sprite = plantData.hotbarIcon;
+        
+      
     }
 
     // Update is called once per frame
