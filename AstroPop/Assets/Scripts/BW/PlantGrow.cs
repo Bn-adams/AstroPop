@@ -6,7 +6,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
 {
     public Item plantItem;
     public Plant plant;
-    public Hotbar hotbar;
+    public HotbarV2 hotbar;
     public Plant hotbarPlant;
     public SpriteRenderer spriteRenderer;
     private Sprite plantStage1;
@@ -77,7 +77,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         if (!seedIsPlanted)
         {
-            if (hotbar.item is Plant plant)
+            if (hotbar.items[hotbar.currentHighlightenSlot] is Plant plant)
             {
                 hotbarPlant = plant;
                 plantedPlant = hotbarPlant;
@@ -102,7 +102,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             growthPodWaterNeeded = plantedPlant.waterNeeded;
 
             seedIsPlanted = true;
-            hotbar.RemoveItem();
+            hotbar.RemoveCurrentItem();
         }
     }
     public void Harvest()
@@ -123,15 +123,19 @@ public class PlantGrow : MonoBehaviour, IInteractable
     }
     public void InteractE()
     {
-        if (hotbar.GetCurrentItem().itemType == "Seed")
+        if (hotbar.GetCurrentItem() != null)
         {
-            PlantSeed();
-        }
+            if (hotbar.GetCurrentItem().itemType == "Seed")
+            {
+                PlantSeed();
+            }
 
-        if (hotbar.GetCurrentItem().itemName == "Water")
-        {
-            WaterPlant();
+            else if (hotbar.GetCurrentItem().itemName == "Water")
+            {
+                WaterPlant();
+            }
         }
+        
 
         
     }
@@ -141,7 +145,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
         if (!IsFullyWatered())
         {
             growthPodWaterLevel++;
-            hotbar.RemoveItem();
+            hotbar.RemoveCurrentItem();
         }
        
     }

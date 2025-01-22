@@ -84,14 +84,13 @@ public class HotbarV2 : MonoBehaviour
     }
 
 
-    public Item GetCurrentItem(int hotbarSlot)
+    public Item GetCurrentItem()
     {
-        if (items[hotbarSlot] == null)
+        if (items[currentHighlightenSlot] != null)
         {
-            return items[hotbarSlot];
+            return items[currentHighlightenSlot];
         }
-        else return null;
-        
+        else return null; 
     }
 
     public bool IsSlotEmpty(int hotbarSlot)
@@ -124,9 +123,9 @@ public class HotbarV2 : MonoBehaviour
         // 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (GetCurrentItem(currentHighlightenSlot) != null)
+            if (GetCurrentItem() != null)
             {
-                Debug.Log(GetCurrentItem(currentHighlightenSlot).name);
+                Debug.Log(GetCurrentItem().itemName);
             }
             else
             {
