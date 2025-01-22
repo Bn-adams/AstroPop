@@ -9,8 +9,10 @@ public class HotbarV2 : MonoBehaviour
 {
     public Item[] items;
     public Image[] itemImages;
+    public Image[] slotHighlighted;
 
     public int[] hotbarArray = new int[9];
+    public int currentHighlightenSlot = 0;
 
     private string itemInSlotName;
     public void Start()
@@ -18,9 +20,7 @@ public class HotbarV2 : MonoBehaviour
         // Set the items so there in an array
         items = new Item[9];
         itemImages = new Image[9];
-
-        items = new Item[9];
-        itemImages = new Image[9];
+        slotHighlighted = new Image[9];
 
         // Assign each image using find, each hotbar slot must be names HI1 HI2 etc...
         for (int i = 0; i < 9; i++)
@@ -28,6 +28,9 @@ public class HotbarV2 : MonoBehaviour
             string imageName = $"HI{i + 1}";
             itemImages[i] = GameObject.Find(imageName)?.GetComponent<Image>();
             if (itemImages[i] == null) Debug.LogError($"Image {imageName} not found or missing Image component.");
+            string slotName = $"ItemFrame{i + 1}";
+            slotHighlighted[i] = GameObject.Find(slotName)?.GetComponent<Image>();
+            if(slotHighlighted[i] == null) Debug.LogError($"Image {slotName} not found or missing Image component.");
         }
 
         // Sets the visibility of all the item slots to 0% so there isnt a blank white square.
@@ -35,6 +38,8 @@ public class HotbarV2 : MonoBehaviour
         {
             SetImageAlpha(0f, i);
         }
+        // Defult sets the first slot as highlighted
+        SethotbarHighlightedAlpha(1, 0);
     }
 
     // This 
@@ -67,11 +72,9 @@ public class HotbarV2 : MonoBehaviour
         }
     }
 
-    public Item GetCurrentItem()
+    public Item GetCurrentItem(int hotbarSlot)
     {
-        // Change 0 to which item you want to get
-        // Consider having an input to this function called hotbarSlot
-        return items[0];
+        return items[hotbarSlot];
     }
 
     public bool IsSlotEmpty(int hotbarSlot)
@@ -84,7 +87,6 @@ public class HotbarV2 : MonoBehaviour
         {
             return false;
         }
-        // Checks wether slot is empty and returns true if it is
     }
 
     public void SetImageAlpha(float alpha, int hotbarSlot)
@@ -93,9 +95,19 @@ public class HotbarV2 : MonoBehaviour
         currentColor.a = Mathf.Clamp01(alpha);         // Set alpha (ensure it's between 0 and 1)
         itemImages[hotbarSlot].color = currentColor;                // Apply the updated color
     }
+    public void SethotbarHighlightedAlpha(float alpha, int hotbarSlot)
+    {
+        Color currentColor = slotHighlighted[hotbarSlot].color;
+        currentColor.a = Mathf.Clamp01(alpha);
+        slotHighlighted[hotbarSlot].color = currentColor;
+    }
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Debug.Log(GetCurrentItem(currentHighlightenSlot).name);
+        }
         // Cheat codes to get rid of items in hotbar
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
@@ -121,8 +133,62 @@ public class HotbarV2 : MonoBehaviour
         {
             RemoveItem(5);
         }
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll > 0)
+        {
+            if (currentHighlightenSlot == 0)
+            {
+                currentHighlightenSlot = 5;
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i == currentHighlightenSlot)
+                    {
+                        SethotbarHighlightedAlpha(1, i);
+                    }
+                    else SethotbarHighlightedAlpha(0.25f, i);
+                }
+
+            }
+            else
+            {
+                currentHighlightenSlot--;
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i == currentHighlightenSlot)
+                    {
+                        SethotbarHighlightedAlpha(1, i);
+                    }
+                    else SethotbarHighlightedAlpha(0.25f, i);
+                }
+            }
+        }
+        if (scroll < 0) 
+        {
+            if (currentHighlightenSlot == 5)
+            {
+                currentHighlightenSlot = 0;
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i == currentHighlightenSlot)
+                    {
+                        SethotbarHighlightedAlpha(1, i);
+                    }
+                    else SethotbarHighlightedAlpha(0.25f, i);
+                }
+            }
+            else
+            {
+                currentHighlightenSlot++;
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i == currentHighlightenSlot)
+                    {
+                        SethotbarHighlightedAlpha(1, i);
+                    }
+                    else SethotbarHighlightedAlpha(0.25f, i);
+                }
+            }
+        }
     }
-
-    
-
 }

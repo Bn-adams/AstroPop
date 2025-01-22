@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 13323923}
   - component: {fileID: 13323922}
   m_Layer: 5
-  m_Name: ItemFrame (4)
+  m_Name: ItemFrame5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 46718065}
   - component: {fileID: 46718064}
   m_Layer: 5
-  m_Name: ItemFrame (1)
+  m_Name: ItemFrame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 193840988}
   - component: {fileID: 193840987}
   m_Layer: 5
-  m_Name: ItemFrame (7)
+  m_Name: ItemFrame8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 205285199}
   - component: {fileID: 205285198}
   m_Layer: 5
-  m_Name: ItemFrame (6)
+  m_Name: ItemFrame7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 567524273}
   - component: {fileID: 567524272}
   m_Layer: 5
-  m_Name: ItemFrame (8)
+  m_Name: ItemFrame9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 717753517}
   - component: {fileID: 717753516}
   m_Layer: 5
-  m_Name: ItemFrame (5)
+  m_Name: ItemFrame6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2913,7 +2913,7 @@ GameObject:
   - component: {fileID: 1464855558}
   - component: {fileID: 1464855557}
   m_Layer: 5
-  m_Name: ItemFrame (2)
+  m_Name: ItemFrame3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3390,34 +3390,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  item1: {fileID: 0}
-  item2: {fileID: 0}
-  item3: {fileID: 0}
-  item4: {fileID: 0}
-  item5: {fileID: 0}
-  item6: {fileID: 0}
-  item7: {fileID: 0}
-  item8: {fileID: 0}
-  item9: {fileID: 0}
-  itemImage1: {fileID: 1541168390}
-  itemImage2: {fileID: 1378086475}
-  itemImage3: {fileID: 229285099}
-  itemImage4: {fileID: 438565190}
-  itemImage5: {fileID: 1872904754}
-  itemImage6: {fileID: 1335541010}
-  itemImage7: {fileID: 806269995}
-  itemImage8: {fileID: 1956052589}
-  itemImage9: {fileID: 1273891549}
-  itemRenderer1: {fileID: 0}
-  itemRenderer2: {fileID: 1378086474}
-  itemRenderer3: {fileID: 229285098}
-  itemRenderer4: {fileID: 438565189}
-  itemRenderer5: {fileID: 1872904753}
-  itemRenderer6: {fileID: 1335541009}
-  itemRenderer7: {fileID: 806269994}
-  itemRenderer8: {fileID: 1956052588}
-  itemRenderer9: {fileID: 1273891548}
+  itemImages: []
+  slotHighlighted: []
   hotbarArray: 000000000000000000000000000000000000000000000000000000000000000000000000
+  currentHighlightenSlot: 0
 --- !u!1 &1872904751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,7 +3534,7 @@ GameObject:
   - component: {fileID: 1885608948}
   - component: {fileID: 1885608947}
   m_Layer: 5
-  m_Name: ItemFrame (3)
+  m_Name: ItemFrame4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3597,7 +3573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.81960785, g: 0.81960785, b: 0.81960785, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3737,7 +3713,7 @@ GameObject:
   - component: {fileID: 1943772562}
   - component: {fileID: 1943772561}
   m_Layer: 5
-  m_Name: ItemFrame
+  m_Name: ItemFrame1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3776,7 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.62352943}
+  m_Color: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0.2509804}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
