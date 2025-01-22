@@ -11,7 +11,7 @@ public class Plant : Item
     public Sprite growthStage2;     
     public Sprite growthStage3;     
     public Sprite growthStage4;
-    public float waterLevel = 0;
-    public float CO2 = 0;
+    public float waterNeeded;
+    public float CO2Needed;
     public float oxygenProduce = 10;
 }

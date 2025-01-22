@@ -22,10 +22,16 @@ public class PlantGrow : MonoBehaviour, IInteractable
     private bool IsHarvestable = false;
 
     public OxygenBar oxyBar;
+
+
+    private float growthPodWaterLevel;
+    private float growthPodWaterNeeded;
+
+
     // Start is called before the first frame update
     void Start()
     {
-      
+        
         
     }
 
@@ -34,28 +40,35 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         if (seedIsPlanted)
         {
-            IsHarvestable = false;
-            plantTime += Time.deltaTime;
-
-            if (plantTime < plantedPlant.growthTime / 4)
+            if (!IsFullyWatered())
             {
                 spriteRenderer.sprite = plantStage1;
             }
-            if (plantTime > plantedPlant.growthTime / 4 * 2)
-            {
-                spriteRenderer.sprite = plantStage2;
-            }
-            if (plantTime > plantedPlant.growthTime / 4 * 3)
-            {
-                spriteRenderer.sprite = plantStage3;
-            }
+            else if (IsFullyWatered()) 
+                {
+                IsHarvestable = false;
+                plantTime += Time.deltaTime;
 
-            if (plantTime > plantedPlant.growthTime / 4 * 4)
-            {
-                spriteRenderer.sprite = plantStage4;
-                IsHarvestable = true;
-            }
+                if (plantTime < plantedPlant.growthTime / 4)
+                {
+                    spriteRenderer.sprite = plantStage1;
+                }
+                if (plantTime > plantedPlant.growthTime / 4 * 2)
+                {
+                    spriteRenderer.sprite = plantStage2;
+                }
+                if (plantTime > plantedPlant.growthTime / 4 * 3)
+                {
+                    spriteRenderer.sprite = plantStage3;
+                }
 
+                if (plantTime > plantedPlant.growthTime / 4 * 4)
+                {
+                    spriteRenderer.sprite = plantStage4;
+                    IsHarvestable = true;
+                }
+
+            }
             
         }
     }
@@ -86,6 +99,8 @@ public class PlantGrow : MonoBehaviour, IInteractable
             plantStage3 = plantedPlant.growthStage3;
             plantStage4 = plantedPlant.growthStage4;
 
+            growthPodWaterNeeded = plantedPlant.waterNeeded;
+
             seedIsPlanted = true;
             hotbar.RemoveItem();
         }
@@ -98,6 +113,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             seedIsPlanted = false;
             plantedPlant = null;
             spriteRenderer.sprite = null;
+            growthPodWaterLevel = 0;
         }
     }
 
@@ -107,8 +123,32 @@ public class PlantGrow : MonoBehaviour, IInteractable
     }
     public void InteractE()
     {
+        if (hotbar.GetCurrentItem().itemType == "Seed")
+        {
+            PlantSeed();
+        }
+
+        if (hotbar.GetCurrentItem().itemName == "Water")
+        {
+            WaterPlant();
+        }
+
         
-        PlantSeed();
+    }
+
+    public void WaterPlant()
+    {
+        if (!IsFullyWatered())
+        {
+            growthPodWaterLevel++;
+            hotbar.RemoveItem();
+        }
+       
+    }
+
+    private bool IsFullyWatered()
+    {
+        return growthPodWaterLevel >= growthPodWaterNeeded;
     }
 
 }

@@ -21,6 +21,6 @@ MonoBehaviour:
   growthStage2: {fileID: 221534813, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
   growthStage3: {fileID: 1483029274, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
   growthStage4: {fileID: 1614689866, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
-  waterLevel: 0
-  CO2: 0
+  waterNeeded: 1
+  CO2Needed: 1
   oxygenProduce: 10
