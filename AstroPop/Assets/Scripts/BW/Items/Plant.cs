@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
+[CreateAssetMenu(fileName = "New Plant", menuName = "Items/Plant")]
 public class Plant : Item
-{             
-    public GameObject plantPrefab;    
+{              
     public float growthTime;          
     public Sprite growthStage1;     
     public Sprite growthStage2;     

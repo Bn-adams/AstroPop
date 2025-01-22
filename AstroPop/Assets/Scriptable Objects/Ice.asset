@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Ice
   m_EditorClassIdentifier: 
   itemType: 
-  itemName: 
-  hotbarIcon: {fileID: 0}
-  plantPrefab: {fileID: 0}
+  itemName: Ice
+  hotbarIcon: {fileID: 21300000, guid: b0597a9c6a96fb34daded5961e855f7d, type: 3}
   meltTime: 0
-  iceSprite: {fileID: 0}
-  bigIceSprite: {fileID: 0}
   meltWaterLevel: 0
