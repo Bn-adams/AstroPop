@@ -7844,7 +7844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179661268}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.20041488, w: 0.9797111}
+  m_LocalRotation: {x: 0, y: 0, z: 0.09557824, w: 0.99542195}
   m_LocalPosition: {x: 0.77695924, y: -0.015653417, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8003,7 +8003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386229265}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.16138302, w: 0.9868918}
+  m_LocalRotation: {x: -0, y: -0, z: -0.13114494, w: 0.9913632}
   m_LocalPosition: {x: 0.82, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8225,7 +8225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543325355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.998497, w: 0.05480665}
+  m_LocalRotation: {x: 0, y: 0, z: -0.99152, w: 0.12995447}
   m_LocalPosition: {x: 0.33026537, y: -0.5120098, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8373,6 +8373,8 @@ GameObject:
   - component: {fileID: 690097354}
   - component: {fileID: 690097353}
   - component: {fileID: 690097352}
+  - component: {fileID: 690097357}
+  - component: {fileID: 690097358}
   m_Layer: 0
   m_Name: IKAstro Pop Guy 2  1
   m_TagString: Untagged
@@ -8536,6 +8538,31 @@ Transform:
   - {fileID: 687308674}
   m_Father: {fileID: 2001183569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690097357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690097351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4737dc20e571f9d49a4a714a6458ae68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &690097358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690097351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17eb73e9bdaf2bb428c94293b1bbcaba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRigidbody: {fileID: 1066232343}
 --- !u!1 &695203057
 GameObject:
   m_ObjectHideFlags: 0
@@ -8794,7 +8821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825457104}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.9616958, w: 0.274119}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99158084, w: 0.1294893}
   m_LocalPosition: {x: 0.3422381, y: 0.43758437, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8826,7 +8853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863854738}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.17900737, w: 0.98384774}
+  m_LocalRotation: {x: 0, y: 0, z: -0.05883232, w: 0.9982679}
   m_LocalPosition: {x: 0.78003067, y: 0.00000019452924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9184,7 +9211,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7650905, y: -0.5292355}
+  m_Offset: {x: 0.04976529, y: -0.6255975}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9195,7 +9222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5522541, y: 2.932349}
+  m_Size: {x: 1.3592392, y: 1.3341458}
   m_EdgeRadius: 0
 --- !u!1 &1071700383
 GameObject:
@@ -9677,7 +9704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506802684}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.064662926, w: 0.99790716}
+  m_LocalRotation: {x: -0, y: -0, z: 0.02631308, w: 0.9996538}
   m_LocalPosition: {x: 0.93, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
