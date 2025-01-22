@@ -25,10 +25,10 @@ public class HotbarV2 : MonoBehaviour
         // Assign each image using find, each hotbar slot must be names HI1 HI2 etc...
         for (int i = 0; i < 9; i++)
         {
-            string imageName = $"HI{i + 1}";
+            string imageName = $"HI{i}";
             itemImages[i] = GameObject.Find(imageName)?.GetComponent<Image>();
             if (itemImages[i] == null) Debug.LogError($"Image {imageName} not found or missing Image component.");
-            string slotName = $"ItemFrame{i + 1}";
+            string slotName = $"ItemFrame{i}";
             slotHighlighted[i] = GameObject.Find(slotName)?.GetComponent<Image>();
             if(slotHighlighted[i] == null) Debug.LogError($"Image {slotName} not found or missing Image component.");
         }
@@ -42,10 +42,10 @@ public class HotbarV2 : MonoBehaviour
         SethotbarHighlightedAlpha(1, 0);
     }
 
-    // This 
+    // Pick up
     public void PickupItem(Item pickupItem)
     {
-        for (int i = 0; i < hotbarArray.Length; i++)
+        for (int i = 0; i < 6; i++)
         {
             if (hotbarArray[i] == 0)
             {
@@ -71,10 +71,27 @@ public class HotbarV2 : MonoBehaviour
             hotbarArray[hotbarSlot] = 0;
         }
     }
+    public void RemoveCurrentItem()
+    {
+        if (!IsSlotEmpty(currentHighlightenSlot))
+        {
+            // Set all the relevant hotbar variables
+            items[currentHighlightenSlot] = null;
+            itemImages[currentHighlightenSlot].sprite = null;
+            SetImageAlpha(0f, currentHighlightenSlot);
+            hotbarArray[currentHighlightenSlot] = 0;
+        }
+    }
+
 
     public Item GetCurrentItem(int hotbarSlot)
     {
-        return items[hotbarSlot];
+        if (items[hotbarSlot] == null)
+        {
+            return items[hotbarSlot];
+        }
+        else return null;
+        
     }
 
     public bool IsSlotEmpty(int hotbarSlot)
@@ -104,14 +121,22 @@ public class HotbarV2 : MonoBehaviour
 
     public void Update()
     {
+        // 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log(GetCurrentItem(currentHighlightenSlot).name);
+            if (GetCurrentItem(currentHighlightenSlot) != null)
+            {
+                Debug.Log(GetCurrentItem(currentHighlightenSlot).name);
+            }
+            else
+            {
+                Debug.Log("You're not highlighting any item currently");
+            }
         }
         // Cheat codes to get rid of items in hotbar
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            RemoveItem(0);
+            RemoveCurrentItem();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
