@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour
@@ -54,7 +55,12 @@ public class GrapplingGun : MonoBehaviour
 
     [HideInInspector] public Vector2 grapplePoint;
     [HideInInspector] public Vector2 grappleDistanceVector;
-
+    
+    [Header("Debug:")]
+    [SerializeField] private bool debug = false;
+    [SerializeField] private bool ropeElasticity = true;
+    [SerializeField] private float elasticityModifier = 0.2f;
+    [SerializeField] private bool ropeExtraMomentum = true;
     private void Start()
     {
         grappleRope.enabled = false;
@@ -169,6 +175,15 @@ public class GrapplingGun : MonoBehaviour
 
             m_springJoint2D.connectedAnchor = grapplePoint;
             m_springJoint2D.enabled = true;
+            if(ropeExtraMomentum)
+            {
+                GrappleDirectionalVelocity();
+            }
+            if (ropeElasticity)
+            {
+                SetGrappleElasticity();
+            }
+          
         }
         else
         {
@@ -193,11 +208,76 @@ public class GrapplingGun : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (firePoint != null && hasMaxDistance)
+        if(debug)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(firePoint.position, maxDistnace);
+            if (firePoint != null && hasMaxDistance)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawWireSphere(firePoint.position, maxDistnace);
+            }
         }
     }
 
+    private void GrappleDirectionalVelocity()
+    {
+        Vector2 velocity = m_rigidbody.velocity;
+        m_rigidbody.AddForce(velocity * 7); 
+    }
+
+   
+    
+    private void SetGrappleElasticity()
+    {
+        Vector2 velocity = m_rigidbody.velocity;
+        Vector2 grappleDirection = (grapplePoint - (Vector2)transform.position).normalized;
+
+        // Determine if moving toward or away from the grapple point
+        bool isFacing = Vector2.Dot(velocity.normalized, grappleDirection) > 0;
+
+        // Calculate elasticity value based on velocity
+        // Adjust multiplier for desired effect
+        if(velocity.magnitude>10)
+        {
+            float elasticityValue = velocity.magnitude * elasticityModifier; 
+            // Stop any existing coroutine to prevent stacking
+            StopAllCoroutines();
+            StartCoroutine(AdjustGrappleDistance(isFacing, elasticityValue));
+        }
+    }
+
+    private IEnumerator AdjustGrappleDistance(bool isFacing, float elasticityValue)
+    {
+        float duration = 1.5f; // Time over which to adjust the distance
+        float elapsed = 0;
+
+        float initialDistance = m_springJoint2D.distance;
+        float targetdistance;
+        
+        if(isFacing)
+        {
+            targetdistance = Mathf.Max(initialDistance - elasticityValue, 2f); // Decrease distance smoothly
+            
+        }
+        else
+        {
+            targetdistance = Mathf.Min(initialDistance + elasticityValue, maximumRopeDistance); // Increase distance smoothly
+         
+        }
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            
+          
+            // Interpolate the distance with a smoother easing function
+            m_springJoint2D.distance = Mathf.Lerp(initialDistance, targetdistance, Mathf.SmoothStep(0, 1, t));
+            
+            yield return null; // Wait for the next frame
+        }
+
+        // Final adjustment to ensure accuracy
+        m_springJoint2D.distance = targetdistance;
+       
+    }
 }
