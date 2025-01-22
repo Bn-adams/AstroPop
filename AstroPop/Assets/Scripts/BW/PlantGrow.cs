@@ -32,7 +32,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
-        privateVariables = GetComponent<PrivateVariables>();
+        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         
     }
 

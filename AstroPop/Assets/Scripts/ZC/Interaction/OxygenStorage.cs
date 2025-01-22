@@ -4,20 +4,57 @@ using UnityEngine;
 
 public class OxygenStorage : MonoBehaviour, IInteractable
 {
+    public PrivateVariables privateVariables;
     public HotbarV2 hotbar;
-    public int oxygenAmount;
+    public int oxygenAmountStored = 0;
+    private int maxOxygenStorage = 400;
+    private void Start()
+    {
+        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+    }
     public void InteractQ()
     {
-        if (hotbar.GetCurrentItem().itemType == "Oxygen")
+        if (hotbar.GetCurrentItem() != null)
         {
-
+            if (hotbar.GetCurrentItem().itemType == "Oxygen")
+            {
+                Debug.Log("you have got more oxygen");
+            }
         }
-        Debug.Log("Plant B says QQQQQ!");
-
+        if (privateVariables.OxygenAmount < 95f)
+        {
+            if (oxygenAmountStored >= 10)
+            {
+                privateVariables.OxygenAmount += 10;
+                oxygenAmountStored -= 10;
+            }
+            else if (oxygenAmountStored < 0)
+            {
+                privateVariables.OxygenAmount += oxygenAmountStored;
+                oxygenAmountStored = 0;
+            }
+            else
+            {
+                Debug.Log("No stored oxygen left :(");
+            }
+        }
     }
     public void InteractE()
     {
-        Debug.Log("Plant B says EEEEE!");
+        if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        {
+            
+            Debug.Log("oxygen");
+
+            oxygenAmountStored += 10;
+            privateVariables.OxygenAmount -= 10;
+            if (oxygenAmountStored > maxOxygenStorage)
+            {
+                privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
+                oxygenAmountStored = maxOxygenStorage;
+
+            }
+        }
     }
 }
 
