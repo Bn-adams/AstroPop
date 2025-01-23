@@ -33,6 +33,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public float plantTime = 0f;
     private float currentGrowthTime = 0f; // Reset growth time
     private float currentWaterLevel = 0f; // Reset water level
+    private float currentCo2Level = 0f;
 
     public Plant plantedPlant;
     private bool seedIsPlanted = false;
@@ -43,6 +44,9 @@ public class PlantGrow : MonoBehaviour, IInteractable
 
     private float growthPodWaterLevel;
     private float growthPodWaterNeeded;
+
+    private float growthPodCarbonLevel;
+    private float growthPodCarbonNeeded;
 
 
     // Start is called before the first frame update
@@ -66,7 +70,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             {
                 spriteRendererPlant.sprite = plantStage1;
             }
-            else if (IsFullyWatered()) 
+            else if (IsFullyWatered() && IsFullyCarbonated()) 
                 {
                 IsHarvestable = false;
                 plantTime += Time.deltaTime;
@@ -120,6 +124,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             plantStage4 = plantedPlant.growthStage4;
 
             growthPodWaterNeeded = plantedPlant.waterNeeded;
+            growthPodCarbonNeeded = plantedPlant.CO2Needed;
 
             seedIsPlanted = true;
             hotbar.RemoveCurrentItem();
@@ -134,6 +139,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             plantedPlant = null;
             spriteRendererPlant.sprite = null;
             growthPodWaterLevel = 0;
+            growthPodCarbonLevel = 0;
             P00 = true;
             P10 = false;
             P01 = false;
@@ -159,6 +165,11 @@ public class PlantGrow : MonoBehaviour, IInteractable
             {
                 WaterPlant();
             }
+
+            else if (hotbar.GetCurrentItem().itemName == "Co2")
+            {
+                CarbonatePlant();
+            }
         }
     }
 
@@ -176,9 +187,28 @@ public class PlantGrow : MonoBehaviour, IInteractable
         }
     }
 
+    
+    public void CarbonatePlant()
+    {
+        if (!IsFullyCarbonated())
+        {
+            growthPodCarbonLevel++;
+            hotbar.RemoveCurrentItem();
+            P00 = false;
+            P10 = true;
+            P01 = false;
+            P11 = false;
+            spriteChange();
+        }
+    }
+
     private bool IsFullyWatered()
     {
         return growthPodWaterLevel >= growthPodWaterNeeded;
+    }
+    private bool IsFullyCarbonated()
+    {
+        return growthPodCarbonLevel >= growthPodCarbonNeeded;
     }
     public void spriteChange()
     {
