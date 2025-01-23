@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OxygenStorage : MonoBehaviour, IInteractable
+public class CarbonStorage : MonoBehaviour, IInteractable
 {
     private PrivateVariables privateVariables;
     private HotbarV2 hotbar;
-    public int oxygenAmountStored = 0;
-    private int maxOxygenStorage = 100;
+    public int carbonAmountStored = 0;
+    private int maxCarbonStorage = 100;
 
     private SpriteRenderer spriteRenderer;
-    public Sprite Ox0;
-    public Sprite Ox1;
-    public Sprite Ox2;
-    public Sprite Ox3;
-    public Sprite Ox4;
+    public Sprite car0;
+    public Sprite car1;
+    public Sprite car2;
+    public Sprite car3;
+    public Sprite car4;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
@@ -31,17 +31,17 @@ public class OxygenStorage : MonoBehaviour, IInteractable
                 Debug.Log("you have got more oxygen");
             }
         }
-        if (privateVariables.OxygenAmount < 95f)
+        if (privateVariables.Co2Amount < 95f)
         {
-            if (oxygenAmountStored >= 10)
+            if (carbonAmountStored >= 10)
             {
-                privateVariables.OxygenAmount += 10;
-                oxygenAmountStored -= 10;
+                privateVariables.Co2Amount += 10;
+                carbonAmountStored -= 10;
             }
-            else if (oxygenAmountStored < 0)
+            else if (carbonAmountStored < 0)
             {
-                privateVariables.OxygenAmount += oxygenAmountStored;
-                oxygenAmountStored = 0;
+                privateVariables.Co2Amount += carbonAmountStored;
+                carbonAmountStored = 0;
             }
             else
             {
@@ -55,16 +55,16 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     {
         if (hotbar.GetCurrentItem() != null)
         {
-            if (hotbar.GetCurrentItem().itemName == "Oxygen")
+            if (hotbar.GetCurrentItem().itemName == "Co2")
             {
-                if (oxygenAmountStored < maxOxygenStorage)
+                if (carbonAmountStored < maxCarbonStorage)
                 {
-                    oxygenAmountStored += 10; 
+                    carbonAmountStored += 10; 
                     hotbar.RemoveCurrentItem();
                 }
             }
         }
-        SpritChange();  
+        SpritChange();
         //if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
         //{
         //    oxygenAmountStored += 10;
@@ -80,29 +80,29 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     }
     public void SpritChange()
     {
-        if (oxygenAmountStored >= 100)
+        if (carbonAmountStored >= 100)
         {
-            spriteRenderer.sprite = Ox4;
+            spriteRenderer.sprite = car4;
             return;
         }
-        else if (oxygenAmountStored >= 70)
+        else if (carbonAmountStored >= 70)
         {
-            spriteRenderer.sprite = Ox3;
+            spriteRenderer.sprite = car3;
             return;
         }
-        else if (oxygenAmountStored >= 40)
+        else if (carbonAmountStored >= 40)
         {
-            spriteRenderer.sprite = Ox2;
+            spriteRenderer.sprite = car2;
             return;
         }
-        else if (oxygenAmountStored >= 10)
+        else if (carbonAmountStored >= 10)
         {
-            spriteRenderer.sprite = Ox1;
+            spriteRenderer.sprite = car1;
             return;
         }
         else
         {
-            spriteRenderer.sprite = Ox0;
+            spriteRenderer.sprite = car0;
             return;
         }
 

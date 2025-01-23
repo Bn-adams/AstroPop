@@ -14,11 +14,12 @@ public class WaterStorage : MonoBehaviour, IInteractable
 
     private PrivateVariables privateVariables;
     public Item water;
-    public HotbarV2 hotbar;
+    private HotbarV2 hotbar;
     public int WaterAmountStored = 0;
     private int maxWaterStorage = 7;
     private void Start()
     {
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetImage();

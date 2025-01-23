@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7225d3205647d0742a1101e97265810d
+guid: bb8d80e1b3de26b4dafc3393ea3c8217
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New_Piskel_13_0
+      name: OxygenStorage_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5df26cdeaec4164aa6b6279c6dabb7d
-      internalID: -370105337
+      spriteID: 7a119526ac08a6a4ab29973fc565553f
+      internalID: -1859134393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_13_1
+      name: OxygenStorage_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 562d5fa4d5d55c14ebd9c274668640fa
-      internalID: -226352980
+      spriteID: 4f62538e927699140b2fe884e55532ef
+      internalID: 1732423131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_13_2
+      name: OxygenStorage_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1fefde33574da84ea7b5ebf27cd82ea
-      internalID: -540649746
+      spriteID: 7e5066cc82f1fa44e8c79f41bb85a6a7
+      internalID: 931835806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_13_3
+      name: OxygenStorage_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dea00b0bc64aa3d44a06a15dbebb227c
-      internalID: 2007935402
+      spriteID: 3df9ab08cb88bf847aec92f7d471f914
+      internalID: -1774758331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_13_4
+      name: OxygenStorage_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d59827c7b3ca3ec43a9e8e6c59348b01
-      internalID: -1454335888
+      spriteID: 1ed43a9be32bff7468b68b72858523c9
+      internalID: -195121371
       vertices: []
       indices: 
       edges: []
@@ -212,11 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      New_Piskel_13_0: -370105337
-      New_Piskel_13_1: -226352980
-      New_Piskel_13_2: -540649746
-      New_Piskel_13_3: 2007935402
-      New_Piskel_13_4: -1454335888
+      OxygenStorage_0: -1859134393
+      OxygenStorage_1: 1732423131
+      OxygenStorage_2: 931835806
+      OxygenStorage_3: -1774758331
+      OxygenStorage_4: -195121371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
