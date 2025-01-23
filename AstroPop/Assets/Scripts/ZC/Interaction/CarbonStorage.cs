@@ -22,34 +22,35 @@ public class CarbonStorage : MonoBehaviour, IInteractable
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        carbonAmountStored = 10;
     }
     // Take oxygen out
     public void InteractQ()
     {
-        if (hotbar.GetCurrentItem() != null)
-        {
-            if (hotbar.GetCurrentItem().itemType == "Oxygen")
-            {
-                Debug.Log("you have got more oxygen");
-            }
-        }
-        if (privateVariables.Co2Amount < 95f)
-        {
-            if (carbonAmountStored >= 10)
-            {
-                privateVariables.Co2Amount += 10;
-                carbonAmountStored -= 10;
-            }
-            else if (carbonAmountStored < 0)
-            {
-                privateVariables.Co2Amount += carbonAmountStored;
-                carbonAmountStored = 0;
-            }
-            else
-            {
-                Debug.Log("No stored oxygen left :(");
-            }
-        }
+        //if (hotbar.GetCurrentItem() != null)
+        //{
+        //    if (hotbar.GetCurrentItem().itemType == "Oxygen")
+        //    {
+        //        Debug.Log("you have got more oxygen");
+        //    }
+        //}
+        //if (privateVariables.Co2Amount < 95f)
+        //{
+        //    if (carbonAmountStored >= 10)
+        //    {
+        //        privateVariables.Co2Amount += 10;
+        //        carbonAmountStored -= 10;
+        //    }
+        //    else if (carbonAmountStored < 0)
+        //    {
+        //        privateVariables.Co2Amount += carbonAmountStored;
+        //        carbonAmountStored = 0;
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("No stored oxygen left :(");
+        //    }
+        //}
         if (!hotbar.IsInventoryFull()) {
             if (carbonAmountStored >= 10)
             {
@@ -63,7 +64,12 @@ public class CarbonStorage : MonoBehaviour, IInteractable
             }
             SpritChange();
         }
-        
+        else
+        {
+            Debug.Log("your inventory is full");
+        }
+        SpritChange();
+
     }
     // Put oxygen into the storage
     public void InteractE()

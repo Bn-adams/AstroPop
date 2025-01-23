@@ -195,4 +195,4 @@ MonoBehaviour:
   car2: {fileID: -1347185824, guid: 3826589a473ed9d4e870cc8e9e14f522, type: 3}
   car3: {fileID: -1497528860, guid: 3826589a473ed9d4e870cc8e9e14f522, type: 3}
   car4: {fileID: -1990879129, guid: 3826589a473ed9d4e870cc8e9e14f522, type: 3}
-  CarbonBubble: {fileID: 0}
+  CarbonBubble: {fileID: 11400000, guid: 325169cda88d3884094229ef32919313, type: 2}
