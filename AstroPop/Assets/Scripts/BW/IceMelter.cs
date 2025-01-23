@@ -11,6 +11,10 @@ public class IceMelter : MonoBehaviour, IInteractable
     private bool iceHasMelted = false;
     private bool iceIsMelting = false; // bool to tell machine to not except ice when its still melting
     
+    void Start()
+    {
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
+    }
 
     void Update()
     {
