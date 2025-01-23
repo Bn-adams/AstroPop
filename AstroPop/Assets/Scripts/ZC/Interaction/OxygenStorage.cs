@@ -24,13 +24,13 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     // Take oxygen out
     public void InteractQ()
     {
-        if (hotbar.GetCurrentItem() != null)
-        {
-            if (hotbar.GetCurrentItem().itemType == "Oxygen")
-            {
-                Debug.Log("you have got more oxygen");
-            }
-        }
+        //if (hotbar.GetCurrentItem() != null)
+        //{
+        //    if (hotbar.GetCurrentItem().itemType == "Oxygen")
+        //    {
+        //        Debug.Log("you have got more oxygen");
+        //    }
+        //}
         if (privateVariables.OxygenAmount < 95f)
         {
             if (oxygenAmountStored >= 10)

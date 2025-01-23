@@ -5,6 +5,7 @@ using UnityEngine;
 public class PrivateVariables : MonoBehaviour
 {
     public OxygenBar oxygenBar;
+    public CarbonBar carbonBar;
     // Player stats
     private int playerLevel;
     private int playerDayTally;
@@ -13,10 +14,13 @@ public class PrivateVariables : MonoBehaviour
     // Player values
     private float oxygenAmount;
     private int co2Amount;
+
+    private float carbonAmount;
+    
     private void Start()
     {
         oxygenBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
-
+        carbonBar = GameObject.Find("CarbonBar").GetComponent<CarbonBar>();
     }
 
     public int PlayerLevel { get => playerLevel; set => playerLevel = value; }
@@ -35,8 +39,20 @@ public class PrivateVariables : MonoBehaviour
             oxygenBar.setOxygenBar(value);
         }
     }
+    public float CarbonAmount
+    {
+        get => carbonAmount;
+        set
+        {
+            if (value < 0f) carbonAmount = 0f;
+            else if (value > 100f) carbonAmount = 100f;
+            else carbonAmount = value;
+            //Debug.Log(oxygenAmount);
+            carbonBar.setCarbonBar(value);
+        }
+    }
     //public float OxygenAmount { get => oxygenAmount; set => oxygenAmount = value; }
-        
+
     public int Co2Amount { get => co2Amount; set => co2Amount = value;  }
 
 }

@@ -35,6 +35,10 @@ public class OxygenBar : MonoBehaviour
     }
     public void setOxygenBar(float oxygen)
     {
-        oxygenBar.value = oxygen;
+        if (oxygenBar != null)
+        {
+            oxygenBar.value = oxygen;
+
+        }
     }
 }
