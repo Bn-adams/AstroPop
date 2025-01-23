@@ -7,7 +7,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public PrivateVariables privateVariables;
     public Item plantItem;
     public Plant plant;
-    public HotbarV2 hotbar;
+    private HotbarV2 hotbar;
 
     public Plant hotbarPlant;
 
@@ -54,6 +54,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         spriteRendererPod = GetComponent<SpriteRenderer>();
         P00 = true;

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Bubble
   itemName: Water
-  hotbarIcon: {fileID: 21300000, guid: 16be5dfe3e33415469a1a19e2d0e6fca, type: 3}
+  hotbarIcon: {fileID: 2074490783, guid: 9156d6c0fe2541b488cf2ec80d9a95a5, type: 3}
   waterAmount: 10
   waterAmountMax: 20
