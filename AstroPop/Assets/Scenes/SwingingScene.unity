@@ -1455,7 +1455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: maxDistnace
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: recoilSpeed
@@ -1490,6 +1490,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
+      propertyPath: ropeDeceleration
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: elasticityModifier
       value: 0.5
       objectReference: {fileID: 0}
@@ -1499,7 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: minimumRopeDistance
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7241309274666405980, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: autoConfigureDistance
