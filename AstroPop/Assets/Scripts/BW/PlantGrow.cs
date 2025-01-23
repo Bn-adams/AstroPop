@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlantGrow : MonoBehaviour, IInteractable
 {
-    public PrivateVariables privateVariables;
-    public Item plantItem;
-    public Plant plant;
+    private PrivateVariables privateVariables;
+    private Item plantItem;
+    private Plant plant;
     private HotbarV2 hotbar;
 
-    public Plant hotbarPlant;
+    private Plant hotbarPlant;
+    private OxygenBar oxyBar;
 
     // Plant sprites
     public SpriteRenderer spriteRendererPlant;
@@ -19,7 +20,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     private Sprite plantStage4;
 
     // This pods sprites
-    public SpriteRenderer spriteRendererPod;
+    private SpriteRenderer spriteRendererPod;
     public Sprite Pod00;
     public Sprite Pod10;
     public Sprite Pod01;
@@ -35,11 +36,10 @@ public class PlantGrow : MonoBehaviour, IInteractable
     private float currentWaterLevel = 0f; // Reset water level
     private float currentCo2Level = 0f;
 
-    public Plant plantedPlant;
+    private Plant plantedPlant;
     private bool seedIsPlanted = false;
     private bool IsHarvestable = false;
 
-    public OxygenBar oxyBar;
 
 
     private float growthPodWaterLevel;
@@ -56,6 +56,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        oxyBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
         spriteRendererPod = GetComponent<SpriteRenderer>();
         P00 = true;
         P10 = false;
@@ -183,10 +184,9 @@ public class PlantGrow : MonoBehaviour, IInteractable
         {
             growthPodWaterLevel++;
             hotbar.RemoveCurrentItem();
-            P00 = false;
+            
             P10 = true;
-            P01 = false;
-            P11 = false;
+            
             spriteChange();
         }
     }
@@ -198,10 +198,9 @@ public class PlantGrow : MonoBehaviour, IInteractable
         {
             growthPodCarbonLevel++;
             hotbar.RemoveCurrentItem();
-            P00 = false;
-            P10 = true;
-            P01 = false;
-            P11 = false;
+            
+            P01 = true;
+            
             spriteChange();
         }
     }
@@ -216,22 +215,23 @@ public class PlantGrow : MonoBehaviour, IInteractable
     }
     public void spriteChange()
     {
-        if (P00)
-        {
-            spriteRendererPod.sprite = Pod00;
-        }
-        if (P10)
-        {
-            spriteRendererPod.sprite = Pod10;
-        }
-        if (P01)
-        {
-            spriteRendererPod.sprite = Pod01;
-        }
-        if (P11)
+        if (P10 && P01)
         {
             spriteRendererPod.sprite = Pod11;
         }
+        else if (P10)
+        {
+            spriteRendererPod.sprite = Pod10;
+        }
+        else if (P01)
+        {
+            spriteRendererPod.sprite = Pod01;
+        }
+        else
+        {
+            spriteRendererPod.sprite = Pod00;
+        }
+        
 
     }
 }

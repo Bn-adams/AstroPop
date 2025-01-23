@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3233408255118993667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.79, y: -3.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a8e5108fe0c1948ac6acc7020302a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotbar: {fileID: 0}
   carbonAmountStored: 0
   car0: {fileID: -730317925, guid: 3826589a473ed9d4e870cc8e9e14f522, type: 3}
   car1: {fileID: -2090397652, guid: 3826589a473ed9d4e870cc8e9e14f522, type: 3}
