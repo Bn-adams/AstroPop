@@ -60,6 +60,19 @@ public class HotbarV2 : MonoBehaviour
         }
     }
 
+    public bool IsInventoryFull() 
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (hotbarArray[i] == 0)
+            {
+                return false;
+                
+            }
+        }
+        return true;
+    }
+
     public void RemoveItem(int hotbarSlot)
     {
         if (!IsSlotEmpty(hotbarSlot))

@@ -1,59 +1,72 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterStorage : MonoBehaviour, IInteractable
 {
+    public SpriteRenderer spriteRenderer;
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+    public Sprite sprite4;
+    public Sprite sprite5;
+
     public PrivateVariables privateVariables;
+    public Item water;
     public HotbarV2 hotbar;
-    public int oxygenAmountStored = 0;
-    private int maxOxygenStorage = 400;
+    public int WaterAmountStored = 0;
+    private int maxWaterStorage = 400;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     // Take oxygen out
     public void InteractQ()
     {
-        if (hotbar.GetCurrentItem() != null)
+        
+        if (hotbar.IsInventoryFull() == false)
         {
-            if (hotbar.GetCurrentItem().itemType == "Oxygen")
+            if (WaterAmountStored >= 20)
             {
-                Debug.Log("you have got more oxygen");
-            }
-        }
-        if (privateVariables.OxygenAmount < 95f)
-        {
-            if (oxygenAmountStored >= 10)
-            {
-                privateVariables.OxygenAmount += 10;
-                oxygenAmountStored -= 10;
-            }
-            else if (oxygenAmountStored < 0)
-            {
-                privateVariables.OxygenAmount += oxygenAmountStored;
-                oxygenAmountStored = 0;
+                WaterAmountStored -= 20;
+                hotbar.PickupItem(water);
+
             }
             else
             {
-                Debug.Log("No stored oxygen left :(");
+                Debug.Log("no water left");
             }
+        }
+        else
+        {
+            Debug.Log("inventory full");
         }
     }
     // Put oxygen into the storage
     public void InteractE()
     {
-        if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        if (hotbar.GetCurrentItem() != null)
         {
-            oxygenAmountStored += 10;
-            privateVariables.OxygenAmount -= 10;
-            if (oxygenAmountStored > maxOxygenStorage)
+            if (hotbar.GetCurrentItem().itemName == "Water")
             {
-                privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
-                oxygenAmountStored = maxOxygenStorage;
-
+                if (WaterAmountStored <= 380)
+                {
+                    hotbar.RemoveCurrentItem();
+                    WaterAmountStored += 20;
+                }
+                else
+                {
+                    Debug.Log("max water");
+                }
             }
         }
+        spriteRenderer.sprite = sprite1;
     }
+    //public void SetImage()
+    //{
+    //    if (WaterAmountStored > )
+    //}
 }
 
