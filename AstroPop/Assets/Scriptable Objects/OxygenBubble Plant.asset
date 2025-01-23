@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: OxygenBubble Plant
   m_EditorClassIdentifier: 
   itemType: Bubble
-  itemName: 
+  itemName: Oxygen
   hotbarIcon: {fileID: 21300000, guid: 6b843fc1d59ef0443ab7c2676532fe08, type: 3}
   oxygenDropAmount: 0

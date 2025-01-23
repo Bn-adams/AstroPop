@@ -48,6 +48,8 @@ public class PlantGrow : MonoBehaviour, IInteractable
     private float growthPodCarbonLevel;
     private float growthPodCarbonNeeded;
 
+    [SerializeField] private Item oxygenBubble;
+
 
     // Start is called before the first frame update
     void Start()
@@ -135,6 +137,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
         if (IsHarvestable)
         {
             privateVariables.OxygenAmount += plantedPlant.oxygenProduce;
+            hotbar.PickupItem(oxygenBubble);
             seedIsPlanted = false;
             plantedPlant = null;
             spriteRendererPlant.sprite = null;

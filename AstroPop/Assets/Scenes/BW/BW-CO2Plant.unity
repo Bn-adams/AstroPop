@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: oxyBar
       value: 
       objectReference: {fileID: 1350103594}
+    - target: {fileID: 7073880381952913837, guid: c4f01d087db4e2a42935d58999477291, type: 3}
+      propertyPath: oxygenBubble
+      value: 
+      objectReference: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2794,6 +2798,10 @@ PrefabInstance:
       propertyPath: oxyBar
       value: 
       objectReference: {fileID: 1350103594}
+    - target: {fileID: 7073880381952913837, guid: c4f01d087db4e2a42935d58999477291, type: 3}
+      propertyPath: oxygenBubble
+      value: 
+      objectReference: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4433,6 +4441,10 @@ PrefabInstance:
       propertyPath: oxyBar
       value: 
       objectReference: {fileID: 1350103594}
+    - target: {fileID: 7073880381952913837, guid: c4f01d087db4e2a42935d58999477291, type: 3}
+      propertyPath: oxygenBubble
+      value: 
+      objectReference: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4559,6 +4571,10 @@ PrefabInstance:
       propertyPath: oxyBar
       value: 
       objectReference: {fileID: 1350103594}
+    - target: {fileID: 7073880381952913837, guid: c4f01d087db4e2a42935d58999477291, type: 3}
+      propertyPath: oxygenBubble
+      value: 
+      objectReference: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
