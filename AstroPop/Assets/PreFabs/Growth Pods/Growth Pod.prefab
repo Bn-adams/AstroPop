@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5401556500282055606}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.48, y: 2.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2098611814, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,18 +120,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.37}
+  m_Offset: {x: -0.013364792, y: -0.72181547}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.43, y: 1.3}
+  m_Size: {x: 1.1469955, y: 0.67186236}
   m_EdgeRadius: 0
 --- !u!61 &8377676153792137140
 BoxCollider2D:
@@ -165,18 +165,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.21}
+  m_Offset: {x: 0, y: -0.5885446}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.32, y: 2.34}
+  m_Size: {x: 3.32, y: 3.2087016}
   m_EdgeRadius: 0
 --- !u!114 &7073880381952913837
 MonoBehaviour:
@@ -190,20 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c3e692761186d4eabac85476f75221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  privateVariables: {fileID: 0}
-  plantItem: {fileID: 0}
-  plant: {fileID: 0}
-  hotbar: {fileID: 0}
-  hotbarPlant: {fileID: 0}
   spriteRendererPlant: {fileID: 4325900618964718982}
-  spriteRendererPod: {fileID: 0}
   Pod00: {fileID: 2098611814, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod10: {fileID: -762471917, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod01: {fileID: -1807278362, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod11: {fileID: 186014518, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   plantTime: 0
-  plantedPlant: {fileID: 0}
-  oxyBar: {fileID: 0}
+  oxygenBubble: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
 --- !u!1 &8539857271976586776
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +269,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

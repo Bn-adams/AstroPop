@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class OxygenStorage : MonoBehaviour, IInteractable
 {
-    public PrivateVariables privateVariables;
-    public HotbarV2 hotbar;
+    private PrivateVariables privateVariables;
+    private HotbarV2 hotbar;
     public int oxygenAmountStored = 0;
-    private int maxOxygenStorage = 400;
+    private int maxOxygenStorage = 100;
+
+    private SpriteRenderer spriteRenderer;
+    public Sprite Ox0;
+    public Sprite Ox1;
+    public Sprite Ox2;
+    public Sprite Ox3;
+    public Sprite Ox4;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     // Take oxygen out
     public void InteractQ()
@@ -39,21 +48,64 @@ public class OxygenStorage : MonoBehaviour, IInteractable
                 Debug.Log("No stored oxygen left :(");
             }
         }
+        SpritChange();
     }
     // Put oxygen into the storage
     public void InteractE()
     {
-        if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        if (hotbar.GetCurrentItem() != null)
         {
-            oxygenAmountStored += 10;
-            privateVariables.OxygenAmount -= 10;
-            if (oxygenAmountStored > maxOxygenStorage)
+            if (hotbar.GetCurrentItem().itemName == "Oxygen")
             {
-                privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
-                oxygenAmountStored = maxOxygenStorage;
-
+                if (oxygenAmountStored < maxOxygenStorage)
+                {
+                    oxygenAmountStored += 10; 
+                    hotbar.RemoveCurrentItem();
+                }
             }
         }
+        SpritChange();  
+        //if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        //{
+        //    oxygenAmountStored += 10;
+        //    privateVariables.OxygenAmount -= 10;
+        //    if (oxygenAmountStored > maxOxygenStorage)
+        //    {
+        //        privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
+        //        oxygenAmountStored = maxOxygenStorage;
+
+        //    }
+        //}
+
+    }
+    public void SpritChange()
+    {
+        if (oxygenAmountStored >= 100)
+        {
+            spriteRenderer.sprite = Ox4;
+            return;
+        }
+        else if (oxygenAmountStored >= 70)
+        {
+            spriteRenderer.sprite = Ox3;
+            return;
+        }
+        else if (oxygenAmountStored >= 40)
+        {
+            spriteRenderer.sprite = Ox2;
+            return;
+        }
+        else if (oxygenAmountStored >= 10)
+        {
+            spriteRenderer.sprite = Ox1;
+            return;
+        }
+        else
+        {
+            spriteRenderer.sprite = Ox0;
+            return;
+        }
+
     }
 }
 

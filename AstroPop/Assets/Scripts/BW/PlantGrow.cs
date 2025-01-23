@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlantGrow : MonoBehaviour, IInteractable
 {
-    public PrivateVariables privateVariables;
-    public Item plantItem;
-    public Plant plant;
-    public HotbarV2 hotbar;
+    private PrivateVariables privateVariables;
+    private Item plantItem;
+    private Plant plant;
+    private HotbarV2 hotbar;
 
-    public Plant hotbarPlant;
+    private Plant hotbarPlant;
+    private OxygenBar oxyBar;
 
     // Plant sprites
     public SpriteRenderer spriteRendererPlant;
@@ -19,7 +20,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     private Sprite plantStage4;
 
     // This pods sprites
-    public SpriteRenderer spriteRendererPod;
+    private SpriteRenderer spriteRendererPod;
     public Sprite Pod00;
     public Sprite Pod10;
     public Sprite Pod01;
@@ -33,22 +34,29 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public float plantTime = 0f;
     private float currentGrowthTime = 0f; // Reset growth time
     private float currentWaterLevel = 0f; // Reset water level
+    private float currentCo2Level = 0f;
 
-    public Plant plantedPlant;
+    private Plant plantedPlant;
     private bool seedIsPlanted = false;
     private bool IsHarvestable = false;
 
-    public OxygenBar oxyBar;
 
 
     private float growthPodWaterLevel;
     private float growthPodWaterNeeded;
 
+    private float growthPodCarbonLevel;
+    private float growthPodCarbonNeeded;
+
+    [SerializeField] private Item oxygenBubble;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        oxyBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
         spriteRendererPod = GetComponent<SpriteRenderer>();
         P00 = true;
         P10 = false;
@@ -66,7 +74,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             {
                 spriteRendererPlant.sprite = plantStage1;
             }
-            else if (IsFullyWatered()) 
+            else if (IsFullyWatered() && IsFullyCarbonated()) 
                 {
                 IsHarvestable = false;
                 plantTime += Time.deltaTime;
@@ -120,6 +128,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
             plantStage4 = plantedPlant.growthStage4;
 
             growthPodWaterNeeded = plantedPlant.waterNeeded;
+            growthPodCarbonNeeded = plantedPlant.CO2Needed;
 
             seedIsPlanted = true;
             hotbar.RemoveCurrentItem();
@@ -130,10 +139,12 @@ public class PlantGrow : MonoBehaviour, IInteractable
         if (IsHarvestable)
         {
             privateVariables.OxygenAmount += plantedPlant.oxygenProduce;
+            hotbar.PickupItem(oxygenBubble);
             seedIsPlanted = false;
             plantedPlant = null;
             spriteRendererPlant.sprite = null;
             growthPodWaterLevel = 0;
+            growthPodCarbonLevel = 0;
             P00 = true;
             P10 = false;
             P01 = false;
@@ -159,6 +170,11 @@ public class PlantGrow : MonoBehaviour, IInteractable
             {
                 WaterPlant();
             }
+
+            else if (hotbar.GetCurrentItem().itemName == "Co2")
+            {
+                CarbonatePlant();
+            }
         }
     }
 
@@ -168,10 +184,23 @@ public class PlantGrow : MonoBehaviour, IInteractable
         {
             growthPodWaterLevel++;
             hotbar.RemoveCurrentItem();
-            P00 = false;
+            
             P10 = true;
-            P01 = false;
-            P11 = false;
+            
+            spriteChange();
+        }
+    }
+
+    
+    public void CarbonatePlant()
+    {
+        if (!IsFullyCarbonated())
+        {
+            growthPodCarbonLevel++;
+            hotbar.RemoveCurrentItem();
+            
+            P01 = true;
+            
             spriteChange();
         }
     }
@@ -180,24 +209,29 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         return growthPodWaterLevel >= growthPodWaterNeeded;
     }
+    private bool IsFullyCarbonated()
+    {
+        return growthPodCarbonLevel >= growthPodCarbonNeeded;
+    }
     public void spriteChange()
     {
-        if (P00)
-        {
-            spriteRendererPod.sprite = Pod00;
-        }
-        if (P10)
-        {
-            spriteRendererPod.sprite = Pod10;
-        }
-        if (P01)
-        {
-            spriteRendererPod.sprite = Pod01;
-        }
-        if (P11)
+        if (P10 && P01)
         {
             spriteRendererPod.sprite = Pod11;
         }
+        else if (P10)
+        {
+            spriteRendererPod.sprite = Pod10;
+        }
+        else if (P01)
+        {
+            spriteRendererPod.sprite = Pod01;
+        }
+        else
+        {
+            spriteRendererPod.sprite = Pod00;
+        }
+        
 
     }
 }

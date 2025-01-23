@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Common
   hotbarIcon: {fileID: 1552402358, guid: cdc30e5ccaf6be94191932edd769074c, type: 3}
   growthTime: 40
-  growthStage1: {fileID: -566347900, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
-  growthStage2: {fileID: 221534813, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
-  growthStage3: {fileID: 1483029274, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
-  growthStage4: {fileID: 1614689866, guid: d71880a2ebf38cf4da57749103b52f3e, type: 3}
+  growthStage1: {fileID: -933579691, guid: f3a920802182c7f418dca1a62bc0778a, type: 3}
+  growthStage2: {fileID: -2091463966, guid: f3a920802182c7f418dca1a62bc0778a, type: 3}
+  growthStage3: {fileID: -1019075280, guid: f3a920802182c7f418dca1a62bc0778a, type: 3}
+  growthStage4: {fileID: 1267144806, guid: f3a920802182c7f418dca1a62bc0778a, type: 3}
   waterNeeded: 1
   CO2Needed: 1
   oxygenProduce: 10

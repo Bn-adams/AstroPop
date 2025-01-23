@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 1231008682}
   - component: {fileID: 1231008681}
   - component: {fileID: 1231008684}
+
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -463,6 +464,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!61 &1231008684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -508,6 +510,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+
 --- !u!1 &1550005570
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +732,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994864115404963830, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: m_LocalPosition.x
+
       value: -17.12
+
       objectReference: {fileID: 0}
     - target: {fileID: 1994864115404963830, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: m_LocalPosition.y
