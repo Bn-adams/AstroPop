@@ -388,6 +388,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1231008682}
   - component: {fileID: 1231008681}
+  - component: {fileID: 1231008684}
+
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -462,6 +464,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
+--- !u!61 &1231008684
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231008680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+
 --- !u!1 &1550005570
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +697,9 @@ MonoBehaviour:
     SpawnChance: 15
   - GameObject: {fileID: 7399199331970521887, guid: 5f78f6460ba5ee14c8032f85dbea5cca, type: 3}
     SpawnChance: 1
-  radius: 15
+  ClearAreaNegativeExtent: {x: -15, y: -15}
+  ClearAreaPositiveExtent: {x: 15, y: 15}
+  radius: 14.9
   regionSize: {x: 500, y: 500}
   rejectionSamples: 7
   displayRadius: 0.47
@@ -681,11 +732,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994864115404963830, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.7
+
+      value: -17.12
+
       objectReference: {fileID: 0}
     - target: {fileID: 1994864115404963830, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 1994864115404963830, guid: d973f1278642e1b48b83d504ac6ae3e4, type: 3}
       propertyPath: m_LocalPosition.z
