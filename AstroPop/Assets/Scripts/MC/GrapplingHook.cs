@@ -58,7 +58,8 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private bool ropeElasticity = true;
     [SerializeField] private float elasticityModifier = 0.2f;
     [SerializeField] private bool ropeExtraMomentum = true;
-    [SerializeField] private float ropeDeceleration = 1f;
+    [Range(-10, 0)] [SerializeField] private float ropeDeceleration = 1f;
+    [SerializeField] private bool constantRopeReel = false; 
 
     private void Start()
     {
@@ -254,14 +255,18 @@ public class GrapplingGun : MonoBehaviour
                 
                 ropelength = Mathf.Clamp(m_springJoint2D.distance - grappleSpeed * Time.deltaTime,minimumRopeDistance,maximumRopeDistance);
                 m_springJoint2D.distance = ropelength;
+                if (ropelength == minimumRopeDistance)
+                {
+                    yield break;
+                }
                 yield return null;
             }
 
 
         }
-        else
+        else if(grappleSpeed < 0 && !constantRopeReel)
         {
-            while (grappleSpeed < -1f && grappleRope.enabled)
+            while (grappleSpeed < -1f && grappleRope.enabled )
             {
 
                 grappleSpeed = grappleSpeed - ropeDeceleration*Time.deltaTime;
@@ -270,46 +275,36 @@ public class GrapplingGun : MonoBehaviour
 
                 ropelength = Mathf.Clamp(m_springJoint2D.distance - grappleSpeed * Time.deltaTime,minimumRopeDistance,maximumRopeDistance);
                 m_springJoint2D.distance = ropelength;
+                if (ropelength == maximumRopeDistance)
+                {
+                    yield break;
+                }
                 yield return null;
             }
         }
+        else if (grappleSpeed == 0)
+        {
+            yield break;
+        }
+        else
+        {
+            grappleSpeed = 5;
+            float ropeAcceleration = 1;
+            while (grappleRope.enabled)
+            {
 
+                grappleSpeed = grappleSpeed + ropeAcceleration*Time.deltaTime;
+                
+                ropelength = Mathf.Clamp(m_springJoint2D.distance - grappleSpeed * Time.deltaTime,minimumRopeDistance,maximumRopeDistance);
+                m_springJoint2D.distance = ropelength;
+                yield return null;
+            }
+           // velocity = grappleDirection.normalized * grappleSpeed;
+           // m_rigidbody.velocity = velocity;
+        }
+       
     }
 
-    /*private IEnumerator AdjustGrappleDistance()
-    {
-        while (grappleRope.enabled)
-        {
-            Vector2 velocity = m_rigidbody.velocity;
-            Vector2 grappleDirection = (grapplePoint - (Vector2)transform.position).normalized;
-
-            dotValue = Vector2.Dot(velocity.normalized, grappleDirection);
-            grappleSpeed = velocity.magnitude * dotValue;
-            if (grappleSpeed > 1f)
-            {
-                grappleSpeed = grappleSpeed + ropeDeceleration * Time.deltaTime;
-                grappleSpeed = grappleSpeed;
-                ropelength = Mathf.Clamp(m_springJoint2D.distance - grappleSpeed * Time.deltaTime, minimumRopeDistance,
-                    maximumRopeDistance);
-                m_springJoint2D.distance = ropelength;
-            }
-            else if (grappleSpeed < -1f)
-            {
-                grappleSpeed = grappleSpeed - ropeDeceleration * Time.deltaTime;
-                grappleSpeed = grappleSpeed;
-
-
-                ropelength = Mathf.Clamp(m_springJoint2D.distance - grappleSpeed * Time.deltaTime, minimumRopeDistance,
-                    maximumRopeDistance);
-                m_springJoint2D.distance = ropelength;
-            }
-            else
-            {
-                yield break;
-            }
-
-            yield return null;
-        }
-
-    }*/
+    
+   
 }
