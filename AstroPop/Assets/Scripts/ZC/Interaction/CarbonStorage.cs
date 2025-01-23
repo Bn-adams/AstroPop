@@ -15,6 +15,8 @@ public class CarbonStorage : MonoBehaviour, IInteractable
     public Sprite car2;
     public Sprite car3;
     public Sprite car4;
+
+    [SerializeField] private Item CarbonBubble;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
@@ -48,7 +50,20 @@ public class CarbonStorage : MonoBehaviour, IInteractable
                 Debug.Log("No stored oxygen left :(");
             }
         }
-        SpritChange();
+        if (!hotbar.IsInventoryFull()) {
+            if (carbonAmountStored >= 10)
+            {
+                carbonAmountStored -= 10;
+                hotbar.PickupItem(CarbonBubble);
+            }
+
+            else
+            {
+                Debug.Log("No stored Carbon left :(");
+            }
+            SpritChange();
+        }
+        
     }
     // Put oxygen into the storage
     public void InteractE()
@@ -59,10 +74,15 @@ public class CarbonStorage : MonoBehaviour, IInteractable
             {
                 if (carbonAmountStored < maxCarbonStorage)
                 {
-                    carbonAmountStored += 10; 
+                    carbonAmountStored += 10;
                     hotbar.RemoveCurrentItem();
                 }
             }
+        }
+        else if (privateVariables.CarbonAmount >= 10)
+        {
+            carbonAmountStored += 10;
+            privateVariables.CarbonAmount -= 10;
         }
         SpritChange();
         //if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
