@@ -14,6 +14,10 @@ public class AsteriodGeneration : MonoBehaviour
 {
     [Header("Spawn Settings")] 
     [SerializeField] AsteriodSpawn[] spawns;
+
+    [SerializeField] private Vector2 ClearAreaNegativeExtent;
+    [SerializeField] private Vector2 ClearAreaPositiveExtent;
+    
     
     [Header("Poisson disc Settings")] 
     public float radius;
@@ -44,7 +48,12 @@ public class AsteriodGeneration : MonoBehaviour
         }
         foreach (Vector2 point in points)
         {
-           
+            Vector2 spawnPosition = new Vector2(point.x - regionSize.x / 2, point.y - regionSize.y / 2);
+            if (spawnPosition.x > ClearAreaNegativeExtent.x && spawnPosition.x < ClearAreaPositiveExtent.x &&
+                spawnPosition.y > ClearAreaNegativeExtent.y && spawnPosition.y < ClearAreaPositiveExtent.y) 
+            {
+                continue;
+            }
 
             float randomValue = Random.Range(0f, totalChance);
             // Determine which asteroid to spawn
