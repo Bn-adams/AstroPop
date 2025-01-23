@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class OxygenStorage : MonoBehaviour, IInteractable
 {
-    public PrivateVariables privateVariables;
+    private PrivateVariables privateVariables;
     public HotbarV2 hotbar;
     public int oxygenAmountStored = 0;
     private int maxOxygenStorage = 400;
+
+    private SpriteRenderer spriteRenderer;
+    public Sprite Ox0;
+    public Sprite Ox1;
+    public Sprite Ox2;
+    public Sprite Ox3;
+    public Sprite Ox4;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     // Take oxygen out
     public void InteractQ()
@@ -39,6 +47,7 @@ public class OxygenStorage : MonoBehaviour, IInteractable
                 Debug.Log("No stored oxygen left :(");
             }
         }
+        SpritChange();
     }
     // Put oxygen into the storage
     public void InteractE()
@@ -54,6 +63,7 @@ public class OxygenStorage : MonoBehaviour, IInteractable
                 }
             }
         }
+        SpritChange();
         //if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
         //{
         //    oxygenAmountStored += 10;
@@ -65,6 +75,36 @@ public class OxygenStorage : MonoBehaviour, IInteractable
 
         //    }
         //}
+
+    }
+    public void SpritChange()
+    {
+        if (oxygenAmountStored >= 350)
+        {
+            spriteRenderer.sprite = Ox4;
+            return;
+        }
+        else if (oxygenAmountStored >= 300)
+        {
+            spriteRenderer.sprite = Ox4;
+            return;
+        }
+        else if (oxygenAmountStored >= 200)
+        {
+            spriteRenderer.sprite = Ox2;
+            return;
+        }
+        else if (oxygenAmountStored >= 100)
+        {
+            spriteRenderer.sprite = Ox4;
+            return;
+        }
+        else
+        {
+            spriteRenderer.sprite = Ox0;
+            return;
+        }
+
     }
 }
 

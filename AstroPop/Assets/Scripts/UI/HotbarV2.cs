@@ -49,11 +49,20 @@ public class HotbarV2 : MonoBehaviour
         {
             if (hotbarArray[i] == 0)
             {
+                DestroyBubble();
                 items[i] = pickupItem;
                 Debug.Log("youve placed it at spot" + i);
                 itemImages[i].sprite = items[i].hotbarIcon;
                 hotbarArray[i] = 1;
                 SetImageAlpha(1f, i);
+                for (int j = 0; j < 6; j++)
+                {
+                    SethotbarHighlightedAlpha(0.25f, j);
+                }
+                SethotbarHighlightedAlpha(1f, i);
+                currentHighlightenSlot = i;
+
+                
                 //set item at hotbar here
                 break;
             }
@@ -130,6 +139,17 @@ public class HotbarV2 : MonoBehaviour
         currentColor.a = Mathf.Clamp01(alpha);
         slotHighlighted[hotbarSlot].color = currentColor;
     }
+    public void DestroyBubble()
+    {
+        if (GetCurrentItem() != null)
+        {
+            if (GetCurrentItem().itemType == "Bubble")
+            {
+                RemoveCurrentItem();
+            }
+        }
+    }
+    
 
     public void Update()
     {
@@ -174,6 +194,9 @@ public class HotbarV2 : MonoBehaviour
 
         if (scroll > 0)
         {
+            DestroyBubble();
+
+
             if (currentHighlightenSlot == 0)
             {
                 currentHighlightenSlot = 5;
@@ -185,7 +208,6 @@ public class HotbarV2 : MonoBehaviour
                     }
                     else SethotbarHighlightedAlpha(0.25f, i);
                 }
-
             }
             else
             {
@@ -199,9 +221,12 @@ public class HotbarV2 : MonoBehaviour
                     else SethotbarHighlightedAlpha(0.25f, i);
                 }
             }
+
         }
         if (scroll < 0) 
         {
+            DestroyBubble();
+
             if (currentHighlightenSlot == 5)
             {
                 currentHighlightenSlot = 0;
