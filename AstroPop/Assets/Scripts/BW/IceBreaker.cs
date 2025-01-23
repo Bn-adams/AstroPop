@@ -21,10 +21,13 @@ public class IceBreaker : MonoBehaviour, IInteractable
     private bool hasSeedBeenCollected = false;
 
     public IceChunkWithSeed iceChunk;
+  
 
-    public float iceBreakTime = 5f;
+    public float iceBreakTime = 1f;
 
-    
+    public Animator animator;
+    public GameObject AniClass;
+    public GameObject IceSeed;
 
 
     
@@ -44,11 +47,13 @@ public class IceBreaker : MonoBehaviour, IInteractable
         if (iceIsBroken && iceIsOnTable && !iceShardIsCollectable && !hasSeedBeenCollected)
         {
             GiveSeed();
+            IceSeed.SetActive(false);
             return;
         }
         if (iceShardIsCollectable && hasSeedBeenCollected)
         {
             GiveIceShard();
+            AniClass.SetActive(false);
         }
 
     }
@@ -95,13 +100,18 @@ public class IceBreaker : MonoBehaviour, IInteractable
     {
         if (IsIceChunkOnTable())
         {
+            AniClass.SetActive(true);
+            animator.SetBool("IsBreaking",true);
             iceBreakTime -= Time.deltaTime;
 
             if (iceBreakTime <= 0)
             {
+                animator.SetBool("IsBreaking", false);
+                animator.SetBool("IsBroken", true);
                 iceIsBroken = true;
                 //iceIsBraking = false;
                 iceBreakTime = 0;
+                IceSeed.SetActive(true);
             }
             else
             {
@@ -119,6 +129,10 @@ public class IceBreaker : MonoBehaviour, IInteractable
         iceBreakTime = 5;
         iceIsOnTable = false;
         iceIsBroken = false;
+        animator.SetBool("IsBroken", false);
+        animator.SetBool("IsBreaking", false);
+        IceSeed.SetActive(false);
+        AniClass.SetActive(false);
     }
 
     bool IsIceOnTable()
