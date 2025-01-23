@@ -11,6 +11,8 @@ public class PExploreMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform gunPivot;
     bool ReversedGrapple;
+    [SerializeField] private Vector2 velocity;
+    [SerializeField] private float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class PExploreMovement : MonoBehaviour
        // movement.y = Input.GetAxisRaw("Vertical");
 
         movement = movement.normalized;
-       if(gunPivot.rotation.z < 0&&!isGrappling)
+       /*if(gunPivot.rotation.z < 0&&!isGrappling)
         {
             ReversedGrapple = true;
         }
@@ -36,7 +38,9 @@ public class PExploreMovement : MonoBehaviour
         if (ReversedGrapple)
         {
             movement.x = -movement.x;
-        }
+        }*/
+        velocity = rb.velocity;
+        speed=rb.velocity.magnitude;
     }
    
     private void FixedUpdate()
