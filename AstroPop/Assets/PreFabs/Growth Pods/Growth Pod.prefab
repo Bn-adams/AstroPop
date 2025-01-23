@@ -190,14 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c3e692761186d4eabac85476f75221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   spriteRendererPlant: {fileID: 4325900618964718982}
   Pod00: {fileID: 2098611814, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod10: {fileID: -762471917, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod01: {fileID: -1807278362, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   Pod11: {fileID: 186014518, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   plantTime: 0
-  oxygenBubble: {fileID: 0}
+  oxygenBubble: {fileID: 11400000, guid: 6926f11fa2539574cb2164f34716ce84, type: 2}
 --- !u!1 &8539857271976586776
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +269,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class IceMelter : MonoBehaviour, IInteractable
 {
-    public Item currentItem;
-    public Item water;
-    public HotbarV2 hotbar;
+    private Item currentItem;
+    [SerializeField] private Item water;
+    private HotbarV2 hotbar;
     public float iceMeltTime = 10;
     private bool iceHasMelted = false;
     private bool iceIsMelting = false; // bool to tell machine to not except ice when its still melting

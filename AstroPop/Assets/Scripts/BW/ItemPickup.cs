@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class ItemPickup : MonoBehaviour
 {
-    public HotbarV2 hotbar;
+    private HotbarV2 hotbar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (hotbar == null)
+        {
+            Debug.LogError("U suck");
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

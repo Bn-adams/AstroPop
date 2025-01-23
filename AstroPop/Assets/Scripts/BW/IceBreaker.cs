@@ -6,7 +6,7 @@ public class IceBreaker : MonoBehaviour, IInteractable
 {
     private Item currentItem;
    
-    public HotbarV2 hotbar;
+    private HotbarV2 hotbar;
 
     [SerializeField] private Item iceShard;
     [SerializeField] private Item commonSeed;
@@ -14,9 +14,9 @@ public class IceBreaker : MonoBehaviour, IInteractable
     [SerializeField] private Item epicSeed;
     private Item tableSeed;
 
-    public bool iceIsBroken = false;
-    public bool iceIsBraking = false;
-    public bool iceIsOnTable = false;
+    private bool iceIsBroken = false;
+    private bool iceIsBraking = false;
+    private bool iceIsOnTable = false;
     private bool iceShardIsCollectable = false;
     private bool hasSeedBeenCollected = false;
 
