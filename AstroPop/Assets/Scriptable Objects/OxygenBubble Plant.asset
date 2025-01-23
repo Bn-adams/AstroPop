@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e84e8229116cb8a43abea308ffc13d5b, type: 3}
-  m_Name: Co2 Bubble Plant
+  m_Script: {fileID: 11500000, guid: 4ecc7cb28ef10d1498e325272cfa97c1, type: 3}
+  m_Name: OxygenBubble Plant
   m_EditorClassIdentifier: 
   itemType: Bubble
   itemName: 
   hotbarIcon: {fileID: 0}
-  Co2DropAmount: 0
+  oxygenDropAmount: 0
