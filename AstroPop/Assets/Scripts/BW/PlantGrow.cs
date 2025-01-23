@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlantGrow : MonoBehaviour, IInteractable
 {
+    public PrivateVariables privateVariables;
     public Item plantItem;
     public Plant plant;
     public HotbarV2 hotbar;
@@ -31,7 +32,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     // Start is called before the first frame update
     void Start()
     {
-        
+        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         
     }
 
@@ -109,7 +110,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         if (IsHarvestable)
         {
-            oxyBar.oxygen += plantedPlant.oxygenProduce;
+            privateVariables.OxygenAmount += plantedPlant.oxygenProduce;
             seedIsPlanted = false;
             plantedPlant = null;
             spriteRenderer.sprite = null;
