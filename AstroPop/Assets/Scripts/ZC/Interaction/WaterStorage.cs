@@ -64,9 +64,9 @@ public class WaterStorage : MonoBehaviour, IInteractable
         }
         spriteRenderer.sprite = sprite1;
     }
-    public void SetImage()
-    {
-        if (WaterAmountStored > )
-    }
+    //public void SetImage()
+    //{
+    //    if (WaterAmountStored > )
+    //}
 }
 
