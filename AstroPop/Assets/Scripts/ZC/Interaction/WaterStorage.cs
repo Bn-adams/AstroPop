@@ -6,21 +6,23 @@ using UnityEngine;
 public class WaterStorage : MonoBehaviour, IInteractable
 {
     public SpriteRenderer spriteRenderer;
-    public Sprite sprite1;
-    public Sprite sprite2;
-    public Sprite sprite3;
-    public Sprite sprite4;
-    public Sprite sprite5;
+    public Sprite Water_storage_0;
+    public Sprite Water_storage_1;
+    public Sprite Water_storage_2;
+    public Sprite Water_storage_3;
+    public Sprite Water_storage_4;
 
     public PrivateVariables privateVariables;
     public Item water;
     public HotbarV2 hotbar;
     public int WaterAmountStored = 0;
-    private int maxWaterStorage = 400;
+    private int maxWaterStorage = 7;
     private void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        SetImage();
+
     }
     // Take oxygen out
     public void InteractQ()
@@ -28,9 +30,9 @@ public class WaterStorage : MonoBehaviour, IInteractable
         
         if (hotbar.IsInventoryFull() == false)
         {
-            if (WaterAmountStored >= 20)
+            if (WaterAmountStored >= 1)
             {
-                WaterAmountStored -= 20;
+                WaterAmountStored -= 1;
                 hotbar.PickupItem(water);
 
             }
@@ -43,6 +45,8 @@ public class WaterStorage : MonoBehaviour, IInteractable
         {
             Debug.Log("inventory full");
         }
+        SetImage();
+
     }
     // Put oxygen into the storage
     public void InteractE()
@@ -51,10 +55,10 @@ public class WaterStorage : MonoBehaviour, IInteractable
         {
             if (hotbar.GetCurrentItem().itemName == "Water")
             {
-                if (WaterAmountStored <= 380)
+                if (WaterAmountStored <= 6)
                 {
                     hotbar.RemoveCurrentItem();
-                    WaterAmountStored += 20;
+                    WaterAmountStored += 1;
                 }
                 else
                 {
@@ -62,11 +66,35 @@ public class WaterStorage : MonoBehaviour, IInteractable
                 }
             }
         }
-        spriteRenderer.sprite = sprite1;
+        SetImage();
     }
-    //public void SetImage()
-    //{
-    //    if (WaterAmountStored > )
-    //}
+    public void SetImage()
+    {
+        if (WaterAmountStored >= 7)
+        {
+            spriteRenderer.sprite = Water_storage_4;
+            return;
+        }
+        else if (WaterAmountStored >= 5)
+        {
+            spriteRenderer.sprite = Water_storage_3;
+            return;
+        }
+        else if (WaterAmountStored >= 3)
+        {
+            spriteRenderer.sprite = Water_storage_2;
+            return;
+        }
+        else if (WaterAmountStored > 0)
+        {
+            spriteRenderer.sprite = Water_storage_1;
+            return;
+        }
+        else
+        {
+            spriteRenderer.sprite = Water_storage_0;
+            return;
+        }
+    }
 }
 

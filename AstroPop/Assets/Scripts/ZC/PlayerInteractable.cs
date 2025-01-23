@@ -83,13 +83,16 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (interactable != null && isInteractableInRange)
         {
+            // Interaction here
             interactable.InteractQ();
+
         }
     }
     void InteractE()
     {
         if (interactable != null && isInteractableInRange)
         {
+
             interactable.InteractE();
         }
     }
