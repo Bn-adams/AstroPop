@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 2098611814, guid: 8344d5cb3ad0ca94a82f5a610f39f0f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   plantTime: 0
   plantedPlant: {fileID: 0}
   oxyBar: {fileID: 0}
+  oxygenBubble: {fileID: 0}
 --- !u!1 &8539857271976586776
 GameObject:
   m_ObjectHideFlags: 0
