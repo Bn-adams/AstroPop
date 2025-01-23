@@ -5,27 +5,87 @@ using UnityEngine;
 public class IceMelter : MonoBehaviour, IInteractable
 {
     public Item currentItem;
-    // Start is called before the first frame update
-    void Start()
-    {
+    public Item water;
+    public HotbarV2 hotbar;
+    public float iceMeltTime = 10;
+    private bool iceHasMelted = false;
+    private bool iceIsMelting = false; // bool to tell machine to not except ice when its still melting
+    
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        // This counts down the timer when ice is put into the machine and sets a bool when its done
+        if (IsIceInMachine() && !iceHasMelted)
+        {
+            iceMeltTime -= Time.deltaTime;
 
+            if (iceMeltTime <= 0)
+            {
+                iceHasMelted = true;
+                iceIsMelting = false; 
+            }
+            else
+            {
+                iceIsMelting = true;
+            }
+        }
     }
-
-    
 
     public void InteractQ()
     {
         // pull out water
+        if (IsIceInMachine() && iceHasMelted)
+        {
+            GiveWater();
+        }
     }
 
     public void InteractE()
     {
-        // Put in ice
+        if (IsIceShard() && !iceIsMelting && !iceHasMelted)
+        {
+            TakeIceShard();
+        }
+    }
+
+    void TakeIceShard()
+    {
+        // This method should tell the ice machine that there is ice in it and take it off the hotbar
+        currentItem = hotbar.GetCurrentItem();
+        hotbar.RemoveCurrentItem();
+    }
+
+    void GiveWater()
+    {
+        // This method sets the current item to water and gives it to the player 
+        currentItem = water;
+        hotbar.PickupItem(currentItem);
+        ResetIceMachine();
+    }
+
+    void ResetIceMachine()
+    {
+        // Resets relavent machine variables
+        currentItem = null;
+        iceMeltTime = 10;
+        iceHasMelted = false;
+    }
+    bool IsIceInMachine()
+    {
+        // Checks if ice is in the machine
+        if (currentItem != null)
+        {
+            return currentItem.itemName == "Ice Shard";
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    bool IsIceShard()
+    {
+        // Checks if the player is holding ice in the highlighted slot
+        return hotbar.GetCurrentItem().itemName == "Ice Shard";
     }
 }
