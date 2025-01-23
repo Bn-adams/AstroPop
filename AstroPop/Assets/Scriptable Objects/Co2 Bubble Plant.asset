@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Co2 Bubble Plant
   m_EditorClassIdentifier: 
   itemType: Bubble
-  itemName: 
-  hotbarIcon: {fileID: 0}
+  itemName: Co2
+  hotbarIcon: {fileID: 21300000, guid: d3c75e39d1f6d7e4e8337f72f4d820e1, type: 3}
   Co2DropAmount: 0
