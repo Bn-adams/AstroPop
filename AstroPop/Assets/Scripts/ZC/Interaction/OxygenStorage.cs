@@ -7,7 +7,7 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     private PrivateVariables privateVariables;
     public HotbarV2 hotbar;
     public int oxygenAmountStored = 0;
-    private int maxOxygenStorage = 400;
+    private int maxOxygenStorage = 100;
 
     private SpriteRenderer spriteRenderer;
     public Sprite Ox0;
@@ -79,24 +79,24 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     }
     public void SpritChange()
     {
-        if (oxygenAmountStored >= 350)
+        if (oxygenAmountStored >= 100)
         {
             spriteRenderer.sprite = Ox4;
             return;
         }
-        else if (oxygenAmountStored >= 300)
+        else if (oxygenAmountStored >= 70)
         {
-            spriteRenderer.sprite = Ox4;
+            spriteRenderer.sprite = Ox3;
             return;
         }
-        else if (oxygenAmountStored >= 200)
+        else if (oxygenAmountStored >= 40)
         {
             spriteRenderer.sprite = Ox2;
             return;
         }
-        else if (oxygenAmountStored >= 100)
+        else if (oxygenAmountStored >= 10)
         {
-            spriteRenderer.sprite = Ox4;
+            spriteRenderer.sprite = Ox1;
             return;
         }
         else
