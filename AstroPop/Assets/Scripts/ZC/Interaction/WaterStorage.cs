@@ -17,9 +17,9 @@ public class WaterStorage : MonoBehaviour, IInteractable
     {
         if (hotbar.GetCurrentItem() != null)
         {
-            if (hotbar.GetCurrentItem().itemType == "Oxygen")
+            if (hotbar.GetCurrentItem().itemName == "Water")
             {
-                Debug.Log("you have got more oxygen");
+                Debug.Log("Water");
             }
         }
         if (privateVariables.OxygenAmount < 95f)
