@@ -59,7 +59,9 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] private float elasticityModifier = 0.2f;
     [SerializeField] private bool ropeExtraMomentum = true;
     [Range(-10, 0)] [SerializeField] private float ropeDeceleration = 1f;
+
     [SerializeField] private bool constantRopeReel = false; 
+
 
     private void Start()
     {
