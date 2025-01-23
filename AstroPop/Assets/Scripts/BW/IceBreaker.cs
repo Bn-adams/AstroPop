@@ -25,6 +25,9 @@ public class IceBreaker : MonoBehaviour, IInteractable
     public float iceBreakTime = 5f;
 
     
+
+
+    
     void Start()
     {
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();

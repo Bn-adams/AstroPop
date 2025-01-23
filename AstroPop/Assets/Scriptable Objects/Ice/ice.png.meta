@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80e250c4f0baee1419441937fd9f9c35
+guid: 6bdb8e47cebaca842b2087bb46c96e14
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New_Piskel_9_0
+      name: ice_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c55aebf82362462479f693de932aebc9
-      internalID: -1318960156
+      spriteID: 3f256f6aea32de74e90f6a611d1a2c25
+      internalID: 459182766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_9_1
+      name: ice_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac41213759ccb24ca3cc08fc23faa27
+      internalID: 163002777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fabf269d9e277ce468ad9fdb6bdb41e9
-      internalID: -1318053630
+      spriteID: 77a29e4a7aa5dc248be67f2bf887286a
+      internalID: -2140137925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New_Piskel_9_2
+      name: ice_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 669011438ad2b814cac34040f668bdd8
-      internalID: 390285973
+      spriteID: 3195e202ab11b6d498a3939a923bb632
+      internalID: -701326903
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      New_Piskel_9_0: -1318960156
-      New_Piskel_9_1: -1318053630
-      New_Piskel_9_2: 390285973
+      ice_0: 459182766
+      ice_1: 163002777
+      ice_2: -2140137925
+      ice_3: -701326903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
