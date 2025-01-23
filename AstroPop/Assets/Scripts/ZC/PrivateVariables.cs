@@ -26,7 +26,7 @@ public class PrivateVariables : MonoBehaviour
             if (value < 0f) oxygenAmount = 0f;
             else if (value > 100f) oxygenAmount = 100f;
             else oxygenAmount = value;
-            Debug.Log(oxygenAmount);
+            //Debug.Log(oxygenAmount);
             oxygenBar.setOxygenBar(value);
         }
     }

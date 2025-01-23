@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OxygenStorage : MonoBehaviour, IInteractable
+public class WaterStorage : MonoBehaviour, IInteractable
 {
     public PrivateVariables privateVariables;
     public HotbarV2 hotbar;
