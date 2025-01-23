@@ -13,6 +13,11 @@ public class PrivateVariables : MonoBehaviour
     // Player values
     private float oxygenAmount;
     private int co2Amount;
+    private void Start()
+    {
+        oxygenBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
+
+    }
 
     public int PlayerLevel { get => playerLevel; set => playerLevel = value; }
     public int PlayerDayTally { get => playerDayTally; set => playerDayTally = value; }
