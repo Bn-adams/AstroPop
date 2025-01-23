@@ -8,12 +8,28 @@ public class PlantGrow : MonoBehaviour, IInteractable
     public Item plantItem;
     public Plant plant;
     public HotbarV2 hotbar;
+
     public Plant hotbarPlant;
-    public SpriteRenderer spriteRenderer;
+
+    // Plant sprites
+    public SpriteRenderer spriteRendererPlant;
     private Sprite plantStage1;
     private Sprite plantStage2;
     private Sprite plantStage3;
     private Sprite plantStage4;
+
+    // This pods sprites
+    public SpriteRenderer spriteRendererPod;
+    public Sprite Pod00;
+    public Sprite Pod10;
+    public Sprite Pod01;
+    public Sprite Pod11;
+    private bool P00;
+    private bool P10;
+    private bool P01;
+    private bool P11;
+
+
     public float plantTime = 0f;
     private float currentGrowthTime = 0f; // Reset growth time
     private float currentWaterLevel = 0f; // Reset water level
@@ -33,7 +49,12 @@ public class PlantGrow : MonoBehaviour, IInteractable
     void Start()
     {
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
-        
+        spriteRendererPod = GetComponent<SpriteRenderer>();
+        P00 = true;
+        P10 = false;
+        P01 = false;
+        P11 = false;
+        spriteChange();
     }
 
     // Update is called once per frame
@@ -43,7 +64,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
         {
             if (!IsFullyWatered())
             {
-                spriteRenderer.sprite = plantStage1;
+                spriteRendererPlant.sprite = plantStage1;
             }
             else if (IsFullyWatered()) 
                 {
@@ -52,25 +73,23 @@ public class PlantGrow : MonoBehaviour, IInteractable
 
                 if (plantTime < plantedPlant.growthTime / 4)
                 {
-                    spriteRenderer.sprite = plantStage1;
+                    spriteRendererPlant.sprite = plantStage1;
                 }
                 if (plantTime > plantedPlant.growthTime / 4 * 2)
                 {
-                    spriteRenderer.sprite = plantStage2;
+                    spriteRendererPlant.sprite = plantStage2;
                 }
                 if (plantTime > plantedPlant.growthTime / 4 * 3)
                 {
-                    spriteRenderer.sprite = plantStage3;
+                    spriteRendererPlant.sprite = plantStage3;
                 }
 
                 if (plantTime > plantedPlant.growthTime / 4 * 4)
                 {
-                    spriteRenderer.sprite = plantStage4;
+                    spriteRendererPlant.sprite = plantStage4;
                     IsHarvestable = true;
                 }
-
             }
-            
         }
     }
 
@@ -113,8 +132,13 @@ public class PlantGrow : MonoBehaviour, IInteractable
             privateVariables.OxygenAmount += plantedPlant.oxygenProduce;
             seedIsPlanted = false;
             plantedPlant = null;
-            spriteRenderer.sprite = null;
+            spriteRendererPlant.sprite = null;
             growthPodWaterLevel = 0;
+            P00 = true;
+            P10 = false;
+            P01 = false;
+            P11 = false;
+            spriteChange();
         }
     }
 
@@ -123,7 +147,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
         Harvest();
     }
     public void InteractE()
-    {
+    { 
         if (hotbar.GetCurrentItem() != null)
         {
             if (hotbar.GetCurrentItem().itemType == "Seed")
@@ -136,9 +160,6 @@ public class PlantGrow : MonoBehaviour, IInteractable
                 WaterPlant();
             }
         }
-        
-
-        
     }
 
     public void WaterPlant()
@@ -147,13 +168,36 @@ public class PlantGrow : MonoBehaviour, IInteractable
         {
             growthPodWaterLevel++;
             hotbar.RemoveCurrentItem();
+            P00 = false;
+            P10 = true;
+            P01 = false;
+            P11 = false;
+            spriteChange();
         }
-       
     }
 
     private bool IsFullyWatered()
     {
         return growthPodWaterLevel >= growthPodWaterNeeded;
     }
+    public void spriteChange()
+    {
+        if (P00)
+        {
+            spriteRendererPod.sprite = Pod00;
+        }
+        if (P10)
+        {
+            spriteRendererPod.sprite = Pod10;
+        }
+        if (P01)
+        {
+            spriteRendererPod.sprite = Pod01;
+        }
+        if (P11)
+        {
+            spriteRendererPod.sprite = Pod11;
+        }
 
+    }
 }
