@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class WaterStorage : MonoBehaviour, IInteractable
 {
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     public Sprite Water_storage_0;
     public Sprite Water_storage_1;
     public Sprite Water_storage_2;
     public Sprite Water_storage_3;
     public Sprite Water_storage_4;
 
-    public PrivateVariables privateVariables;
+    private PrivateVariables privateVariables;
     public Item water;
     public HotbarV2 hotbar;
     public int WaterAmountStored = 0;
