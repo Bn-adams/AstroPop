@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PlantGrow : MonoBehaviour, IInteractable
 {
@@ -50,10 +53,13 @@ public class PlantGrow : MonoBehaviour, IInteractable
 
     [SerializeField] private Item oxygenBubble;
 
+    public Light2D leftLight;
+    public Light2D rightLight;
 
     // Start is called before the first frame update
     void Start()
     {
+        //leftLight = GetComponent<Light2D>();
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         oxyBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
@@ -63,6 +69,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
         P01 = false;
         P11 = false;
         spriteChange();
+        
     }
 
     // Update is called once per frame
@@ -218,18 +225,27 @@ public class PlantGrow : MonoBehaviour, IInteractable
         if (P10 && P01)
         {
             spriteRendererPod.sprite = Pod11;
+            leftLight.color = Color.green;
+            rightLight.color = Color.green;
+
         }
         else if (P10)
         {
             spriteRendererPod.sprite = Pod10;
+            leftLight.color = Color.green;
+            rightLight.color = Color.red;
         }
         else if (P01)
         {
             spriteRendererPod.sprite = Pod01;
+            leftLight.color = Color.red;
+            rightLight.color = Color.green;
         }
         else
         {
             spriteRendererPod.sprite = Pod00;
+            leftLight.color = Color.red;
+            rightLight.color = Color.red;
         }
         
 
