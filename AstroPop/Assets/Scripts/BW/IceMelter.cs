@@ -16,6 +16,8 @@ public class IceMelter : MonoBehaviour, IInteractable
     [SerializeField] Sprite on;
     [SerializeField] Sprite finished;
 
+    
+
     void Start()
     {
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
@@ -74,8 +76,15 @@ public class IceMelter : MonoBehaviour, IInteractable
     void TakeIceShard()
     {
         // This method should tell the ice machine that there is ice in it and take it off the hotbar
-        currentItem = hotbar.GetCurrentItem();
-        hotbar.RemoveCurrentItem();
+        if (hotbar.GetCurrentItem() != null)
+        {
+            if (hotbar.GetCurrentItem().itemName == "Ice Shard")
+            {
+                currentItem = hotbar.GetCurrentItem();
+                hotbar.RemoveCurrentItem();
+            }
+        }
+        
     }
 
     void GiveWater()
@@ -108,7 +117,11 @@ public class IceMelter : MonoBehaviour, IInteractable
 
     bool IsIceShard()
     {
+        if (hotbar.GetCurrentItem() != null)
+        {
+            return hotbar.GetCurrentItem().itemName == "Ice Shard";
+        }
         // Checks if the player is holding ice in the highlighted slot
-        return hotbar.GetCurrentItem().itemName == "Ice Shard";
+        return false;
     }
 }

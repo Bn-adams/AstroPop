@@ -55,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,9 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094ec347aa44d7443ad9a7026004be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 0}
   water: {fileID: 11400000, guid: 56bc0200d106c7e48b71966e79cc7214, type: 2}
-  hotbar: {fileID: 0}
   iceMeltTime: 10
   off: {fileID: -1318960156, guid: 80e250c4f0baee1419441937fd9f9c35, type: 3}
   on: {fileID: -1318053630, guid: 80e250c4f0baee1419441937fd9f9c35, type: 3}
