@@ -43,17 +43,28 @@ public class OxygenStorage : MonoBehaviour, IInteractable
     // Put oxygen into the storage
     public void InteractE()
     {
-        if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        if (hotbar.GetCurrentItem() != null)
         {
-            oxygenAmountStored += 10;
-            privateVariables.OxygenAmount -= 10;
-            if (oxygenAmountStored > maxOxygenStorage)
+            if (hotbar.GetCurrentItem().itemName == "Oxygen")
             {
-                privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
-                oxygenAmountStored = maxOxygenStorage;
-
+                if (oxygenAmountStored < maxOxygenStorage)
+                {
+                    oxygenAmountStored += 10; 
+                    hotbar.RemoveCurrentItem();
+                }
             }
         }
+        //if (privateVariables.OxygenAmount > 15f && (oxygenAmountStored < maxOxygenStorage))
+        //{
+        //    oxygenAmountStored += 10;
+        //    privateVariables.OxygenAmount -= 10;
+        //    if (oxygenAmountStored > maxOxygenStorage)
+        //    {
+        //        privateVariables.OxygenAmount = oxygenAmountStored - maxOxygenStorage;
+        //        oxygenAmountStored = maxOxygenStorage;
+
+        //    }
+        //}
     }
 }
 

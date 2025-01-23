@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: Bubble
   itemName: 
-  hotbarIcon: {fileID: 0}
+  hotbarIcon: {fileID: 21300000, guid: 6b843fc1d59ef0443ab7c2676532fe08, type: 3}
   oxygenDropAmount: 0
