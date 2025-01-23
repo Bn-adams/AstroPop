@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fbba3c9c20ddc774ca2bb481c834efb6
+guid: c19dfaa437edb094b847d2836de12774
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 31
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,209 +93,131 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Path floor tiles basic_0
+      name: Horisontal Path_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec29cca5f65dcbc4db6c9edaeaf073ec
-      internalID: -1476734538
+      spriteID: c3fe54f211b7bbc4aa48c35c47a89a67
+      internalID: 615262659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Path floor tiles basic_1
+      name: Horisontal Path_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 788c088a52b063b498a91d7e6b1cc6f7
-      internalID: -739484651
+      spriteID: 2be330ba0f044cb49b9f57947ab66361
+      internalID: 1202620072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Path floor tiles basic_2
+      name: Horisontal Path_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6171516943e03a4c847201e4a8040de
-      internalID: 1297621693
+      spriteID: 1962ff6a2411ddc41b6b723bcf708b32
+      internalID: 2010849350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Path floor tiles basic_3
+      name: Horisontal Path_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d757c0dcf87c2c34a9846784b5ec3123
-      internalID: 230726575
+      spriteID: 8c4441937ab7abf4883fdee42a112fad
+      internalID: -1797424915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Path floor tiles basic_4
+      name: Horisontal Path_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 128
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fec62f8bfc53b848974a25c5af5caf3
-      internalID: 1722050126
+      spriteID: 893b91e7713807647bb10b787d365014
+      internalID: 1524285459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Path floor tiles basic_5
+      name: Horisontal Path_5
       rect:
         serializedVersion: 2
-        x: 32
+        x: 160
         y: 0
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b69a7f34899a874fbece5b3c13b8146
-      internalID: -1467120661
+      spriteID: 776fc886069dc8542ad8e41a3531e39e
+      internalID: -1580677958
       vertices: []
       indices: 
       edges: []
@@ -311,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Path floor tiles basic_0: -1476734538
-      Path floor tiles basic_1: -739484651
-      Path floor tiles basic_2: 1297621693
-      Path floor tiles basic_3: 230726575
-      Path floor tiles basic_4: 1722050126
-      Path floor tiles basic_5: -1467120661
+      Horisontal Path_0: 615262659
+      Horisontal Path_1: 1202620072
+      Horisontal Path_2: 2010849350
+      Horisontal Path_3: -1797424915
+      Horisontal Path_4: 1524285459
+      Horisontal Path_5: -1580677958
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
