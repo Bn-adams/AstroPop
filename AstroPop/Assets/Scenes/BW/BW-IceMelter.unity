@@ -633,11 +633,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hotbar: {fileID: 507068111}
-  iceShard: {fileID: 0}
+  iceShard: {fileID: 11400000, guid: b905a72610d68bc4da03843db57319be, type: 2}
   commonSeed: {fileID: 11400000, guid: 0b80f92d2d05a3d42b8869fbbd087462, type: 2}
   rareSeed: {fileID: 11400000, guid: 9fa3dac4d786b6045b73e090f69afcde, type: 2}
   epicSeed: {fileID: 11400000, guid: 1553bf6a5ea7dc349b766da9e4be02bf, type: 2}
+  iceIsBroken: 0
+  iceIsBraking: 0
+  iceIsOnTable: 0
   iceChunk: {fileID: 0}
+  iceBreakTime: 5
 --- !u!212 &414250520
 SpriteRenderer:
   m_ObjectHideFlags: 0

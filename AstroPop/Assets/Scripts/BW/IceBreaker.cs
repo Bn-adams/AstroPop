@@ -14,24 +14,40 @@ public class IceBreaker : MonoBehaviour, IInteractable
     [SerializeField] private Item epicSeed;
     private Item tableSeed;
 
-    private bool iceIsBroken = false;
-    private bool iceIsOnTable = false;
+    public bool iceIsBroken = false;
+    public bool iceIsBraking = false;
+    public bool iceIsOnTable = false;
+    private bool iceShardIsCollectable = false;
+    private bool hasSeedBeenCollected = false;
 
     public IceChunkWithSeed iceChunk;
+
+    public float iceBreakTime = 5f;
+
+    
+    void Start()
+    {
+        hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CrushIce();
     }
 
     public void InteractQ()
     {
-        if (iceIsBroken)
+        if (iceIsBroken && iceIsOnTable && !iceShardIsCollectable && !hasSeedBeenCollected)
         {
             GiveSeed();
+            return;
         }
-        
+        if (iceShardIsCollectable && hasSeedBeenCollected)
+        {
+            GiveIceShard();
+        }
+
     }
 
     public void InteractE()
@@ -41,10 +57,6 @@ public class IceBreaker : MonoBehaviour, IInteractable
             TakeIceChunk();
         }
 
-        if (iceIsOnTable && !iceIsBroken) 
-        {
-            CrushIce();
-        }
 
        
     }
@@ -63,23 +75,47 @@ public class IceBreaker : MonoBehaviour, IInteractable
     void GiveSeed()
     {
         hotbar.PickupItem(GetIceSeed());
-        iceIsBroken = false;
+        
+        iceShardIsCollectable = true;
+        hasSeedBeenCollected = true;
     }
 
     void GiveIceShard()
     {
         hotbar.PickupItem(iceShard);
+        iceShardIsCollectable = false;
+        hasSeedBeenCollected = false;
+        ResetTable();
     }
 
     void CrushIce()
     {
+        if (IsIceChunkOnTable())
+        {
+            iceBreakTime -= Time.deltaTime;
+
+            if (iceBreakTime <= 0)
+            {
+                iceIsBroken = true;
+                //iceIsBraking = false;
+                iceBreakTime = 0;
+            }
+            else
+            {
+                iceIsBraking = true;
+            }
+        }
         // Change sprite maybe to show its broken
-        iceIsBroken = true;
+        
+        
     }
 
     void ResetTable()
     {
-
+        currentItem = null;
+        iceBreakTime = 5;
+        iceIsOnTable = false;
+        iceIsBroken = false;
     }
 
     bool IsIceOnTable()
@@ -95,6 +131,18 @@ public class IceBreaker : MonoBehaviour, IInteractable
         }
     }
 
+    bool IsIceChunkOnTable()
+    {
+        // Checks if ice is in the machine
+        if (currentItem != null)
+        {
+            return currentItem.itemType == "Ice Chunk";
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     bool IsIceChunk()
     {
