@@ -73,6 +73,27 @@ public class PlayerMovementWTigger: MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+
+
+
+
 
         if (Input.GetKeyDown(KeyCode.E))
         {
