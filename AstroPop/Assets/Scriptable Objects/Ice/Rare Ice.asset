@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4025a09cf89febd459d684f5ccbc97c5, type: 3}
-  m_Name: Ice Chunk Common
+  m_Name: Rare Ice
   m_EditorClassIdentifier: 
   itemType: Ice Chunk
-  itemName: Ice Chunk Common
-  hotbarIcon: {fileID: 317618309, guid: dbf1bb08d6c553e47a392f2a313e3bb9, type: 3}
-  seedRarity: Common
+  itemName: Ice Chunk Rare
+  hotbarIcon: {fileID: -2140137925, guid: 6bdb8e47cebaca842b2087bb46c96e14, type: 3}
+  seedRarity: Rare

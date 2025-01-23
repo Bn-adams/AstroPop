@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d71880a2ebf38cf4da57749103b52f3e
+guid: f3a920802182c7f418dca1a62bc0778a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,76 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: A Proto designs stages plant 1_0
+      name: Proto designs stages plant 3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -183,20 +118,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae792582d753c446a237ac10295efab
-      internalID: -566347900
+      spriteID: 1e8c89acf4c1699469acbf7a9eb144df
+      internalID: -933579691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A Proto designs stages plant 1_1
+      name: Proto designs stages plant 3_1
       rect:
         serializedVersion: 2
         x: 32
@@ -204,20 +139,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f381e1b1697994eabccfec19f716c4
-      internalID: 221534813
+      spriteID: cec01d1dc07d80840b336263261fbd76
+      internalID: -2091463966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A Proto designs stages plant 1_2
+      name: Proto designs stages plant 3_2
       rect:
         serializedVersion: 2
         x: 64
@@ -225,20 +160,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be00e1e82d5383d4184944a62aaacb7b
-      internalID: 1483029274
+      spriteID: 139b71db3b884794da55a76cf2be1fbc
+      internalID: -1019075280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: A Proto designs stages plant 1_3
+      name: Proto designs stages plant 3_3
       rect:
         serializedVersion: 2
         x: 96
@@ -246,14 +181,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d099fbe021c83847adfba61bac0c08d
-      internalID: 1614689866
+      spriteID: 382535f7b68691e4abb8958884727ee3
+      internalID: 1267144806
       vertices: []
       indices: 
       edges: []
@@ -269,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      A Proto designs stages plant 1_0: -566347900
-      A Proto designs stages plant 1_1: 221534813
-      A Proto designs stages plant 1_2: 1483029274
-      A Proto designs stages plant 1_3: 1614689866
+      Proto designs stages plant 3_0: -933579691
+      Proto designs stages plant 3_1: -2091463966
+      Proto designs stages plant 3_2: -1019075280
+      Proto designs stages plant 3_3: 1267144806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

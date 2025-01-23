@@ -10,10 +10,16 @@ public class IceMelter : MonoBehaviour, IInteractable
     public float iceMeltTime = 10;
     private bool iceHasMelted = false;
     private bool iceIsMelting = false; // bool to tell machine to not except ice when its still melting
-    
+
+    private SpriteRenderer sR;
+    [SerializeField] Sprite off;
+    [SerializeField] Sprite on;
+    [SerializeField] Sprite finished;
+
     void Start()
     {
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
+        sR = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -32,6 +38,19 @@ public class IceMelter : MonoBehaviour, IInteractable
             {
                 iceIsMelting = true;
             }
+        }
+
+        if (iceIsMelting)
+        {
+            sR.sprite = on;
+        }
+        else if (iceHasMelted)
+        {
+            sR.sprite = finished;
+        }
+        else if (!iceIsMelting && !iceHasMelted)
+        {
+            sR.sprite = off;
         }
     }
 
