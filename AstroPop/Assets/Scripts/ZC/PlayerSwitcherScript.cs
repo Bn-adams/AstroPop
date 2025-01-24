@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,12 @@ public class PlayerSwitcherScript : MonoBehaviour
 
     //Target2
     public GameObject playerSwinger;
-    
+    private GrapplingGun grapplingGun;
+
+    private void Awake()
+    {
+        grapplingGun = GameObject.Find("GrapplingGun").GetComponent<GrapplingGun>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +25,7 @@ public class PlayerSwitcherScript : MonoBehaviour
 
         playerShipper.SetActive(true);
         playerSwinger.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -35,6 +42,7 @@ public class PlayerSwitcherScript : MonoBehaviour
             isTarget1 = false;
             playerShipper.SetActive(false);
             playerSwinger.SetActive(true);
+            grapplingGun.BreakGrapple();
 
         }
         else
@@ -43,7 +51,9 @@ public class PlayerSwitcherScript : MonoBehaviour
 
             isTarget1 = true;
             playerShipper.SetActive(true);
+           
             playerSwinger.SetActive(false);
+            
         }
     }
 }
