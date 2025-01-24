@@ -15,7 +15,8 @@ public class AsteroidZone : MonoBehaviour
     void Start()
     {
         // Find the player object (you can tag the player as "Player" for this to work)
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("PlayerShipper");
 
         if (player == null)
         {
