@@ -20,7 +20,7 @@ public class WaterStorage : MonoBehaviour, IInteractable
     private void Start()
     {
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
-        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        privateVariables = GameObject.Find("PlayerShipper").GetComponent<PrivateVariables>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetImage();
 

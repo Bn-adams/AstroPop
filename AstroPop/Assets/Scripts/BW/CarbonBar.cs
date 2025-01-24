@@ -13,7 +13,7 @@ public class CarbonBar : MonoBehaviour
     void Start()
     {
 
-        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        privateVariables = GameObject.Find("PlayerShipper").GetComponent<PrivateVariables>();
 
         carbonBar = GetComponent<Slider>();
         carbonBar.maxValue = maxCarbon;

@@ -61,7 +61,7 @@ public class PlantGrow : MonoBehaviour, IInteractable
     {
         //leftLight = GetComponent<Light2D>();
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
-        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        privateVariables = GameObject.Find("PlayerShipper").GetComponent<PrivateVariables>();
         oxyBar = GameObject.Find("OxygenBar").GetComponent<OxygenBar>();
         spriteRendererPod = GetComponent<SpriteRenderer>();
         P00 = true;
