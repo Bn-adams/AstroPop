@@ -69,7 +69,8 @@ public class GrapplingGun : MonoBehaviour
         m_springJoint2D.enabled = false;
 
     }
-
+    bool ToGrapple;
+    private bool hasReeled;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -109,21 +110,50 @@ public class GrapplingGun : MonoBehaviour
             Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             RotateGun(mousePos, true);
         }
-
+    
+        
         if (grappleRope.enabled)
         {
             if (Input.GetAxisRaw("Vertical") < 0 && m_springJoint2D.distance < maximumRopeDistance)
             {
                 m_springJoint2D.distance += 5 * Time.deltaTime;
+                ToGrapple = true;
+                hasReeled = true;
             }
 
             if (Input.GetAxisRaw("Vertical") > 0 && m_springJoint2D.distance > minimumRopeDistance)
             {
                 m_springJoint2D.distance -= 5 * Time.deltaTime;
+                ToGrapple = false;
+                hasReeled = true;
             }
+        }
+
+        if (hasReeled && grappleRope.enabled == false)
+        {
+            GrapplePullVelocity(ToGrapple);
+            hasReeled = false;
         }
     }
 
+    void GrapplePullVelocity(bool towards)
+    {
+        Vector2 velocity;
+        Vector2 grappleDirection = (grapplePoint - (Vector2)transform.position).normalized;
+
+        if (towards)
+        {
+            velocity = -5 * grappleDirection;
+        }
+        else
+        {
+            velocity = 5 * grappleDirection;
+        }
+        m_rigidbody.AddForce(velocity*10,ForceMode2D.Force);
+        Debug.Log("Grapple pull velocity: " + velocity); 
+        
+    }
+    
     void RotateGun(Vector3 lookPoint, bool allowRotationOverTime)
     {
         Vector3 distanceVector = lookPoint - gunPivot.position;
