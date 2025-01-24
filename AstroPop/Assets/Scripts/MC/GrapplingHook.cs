@@ -237,7 +237,7 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField] float grappleSpeed;
     [SerializeField] float dotValue;
 
-   
+    [SerializeField] private bool extraRope;
 
     [SerializeField] float ropelength;
     private IEnumerator AdjustGrappleDistance( )
@@ -266,7 +266,7 @@ public class GrapplingGun : MonoBehaviour
 
 
         }
-        else if(grappleSpeed < 0 && !constantRopeReel)
+        else if(grappleSpeed < 0 && !constantRopeReel && extraRope)
         {
             while (grappleSpeed < -1f && grappleRope.enabled )
             {
@@ -284,7 +284,7 @@ public class GrapplingGun : MonoBehaviour
                 yield return null;
             }
         }
-        else if (grappleSpeed == 0)
+        else if (grappleSpeed == 0 || !extraRope)
         {
             yield break;
         }
@@ -307,6 +307,10 @@ public class GrapplingGun : MonoBehaviour
        
     }
 
-    
+     public void BreakGrapple()
+    {
+        grappleRope.enabled = false;
+        m_springJoint2D.enabled = false;
+    }
    
 }

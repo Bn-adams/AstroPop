@@ -10,35 +10,42 @@ public class PExploreMovement : MonoBehaviour
     public bool isGrappling;
     public Rigidbody2D rb;
     public Transform gunPivot;
-    bool ReversedGrapple;
+    //[SerializeField] bool ReversedGrapple;
     [SerializeField] private Vector2 velocity;
     [SerializeField] private float speed;
+    [SerializeField] private bool nonClockwiseMovement;
     // Start is called before the first frame update
     void Start()
     {
       rb =  GetComponent<Rigidbody2D>();
 
     }
-
+    [SerializeField]   bool isInput;
+    [SerializeField] bool ReversedGrapple;
     // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
        // movement.y = Input.GetAxisRaw("Vertical");
-
+     
+        isInput = movement.x != 0;
         movement = movement.normalized;
-       /*if(gunPivot.rotation.z < 0&&!isGrappling)
-        {
-            ReversedGrapple = true;
+        if(nonClockwiseMovement){
+            if (gunPivot.rotation.z < 0 && !isGrappling )
+            {
+                ReversedGrapple = true;
+            }
+            else if (gunPivot.rotation.z > 0 && !isGrappling )
+            {
+                ReversedGrapple = false;
+            }
+
+            if (ReversedGrapple )
+            {
+                movement.x = -movement.x;
+            }
         }
-        else if(gunPivot.rotation.z > 0 &&!isGrappling)
-        {
-            ReversedGrapple = false;
-        }
-        if (ReversedGrapple)
-        {
-            movement.x = -movement.x;
-        }*/
+        
         velocity = rb.velocity;
         speed=rb.velocity.magnitude;
     }
@@ -50,7 +57,7 @@ public class PExploreMovement : MonoBehaviour
         {
             
             
-            if(gunPivot.rotation.z < 0 ) 
+            if(gunPivot.rotation.z < 0) 
             { 
                 movement.x = -movement.x; 
             }
