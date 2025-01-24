@@ -21,7 +21,7 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     {
         Debug.Log(" U suck");
         StartCoroutine(DoorCoroutine());
-        BoxCollider2D.enabled = false;
+        
         
 
     }
@@ -29,7 +29,9 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     IEnumerator DoorCoroutine()
     {
         animator.SetBool("IsOpening", true);
+        BoxCollider2D.enabled = false;
         yield return new WaitForSeconds(1);
+        
 
         animator.SetBool("IsOpening", false);
         yield return new WaitForSeconds(1f);
@@ -39,11 +41,12 @@ public class DoorInteraction : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(1);
 
         animator.SetBool("IsClosing", false);
+        BoxCollider2D.enabled = true;
         yield return new WaitForSeconds(1);
 
         
 
-        BoxCollider2D.enabled = true;
+       
 
         yield break;
     }
