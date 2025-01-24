@@ -26,6 +26,7 @@ public class ItemPickup : MonoBehaviour
         {
             WorldItem worldItem = collision.collider.GetComponent<WorldItem>();
             hotbar.PickupItem(worldItem.item);
+            collision.gameObject.SetActive(false);
         }
     }
 }
