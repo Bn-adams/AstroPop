@@ -32,6 +32,7 @@ public class OxygenBar : MonoBehaviour
             privateVariables.OxygenAmount = privateVariables.OxygenAmount - 0.5f;
             oxygenDepleteTimer = 2f;
         }
+        
     }
     public void setOxygenBar(float oxygen)
     {

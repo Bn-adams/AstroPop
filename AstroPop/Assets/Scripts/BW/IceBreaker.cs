@@ -163,6 +163,7 @@ public class IceBreaker : MonoBehaviour, IInteractable
 
     bool IsIceChunk()
     {
+
         // Checks if the player is holding ice in the highlighted slot
         return hotbar.GetCurrentItem().itemType == "Ice Chunk";
     }
