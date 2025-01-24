@@ -13,7 +13,7 @@ public class OxygenBar : MonoBehaviour
     void Start()
     {
 
-        privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
+        privateVariables = GameObject.Find("PlayerShipper").GetComponent<PrivateVariables>();
 
         oxygenBar = GetComponent<Slider>();
         oxygenBar.maxValue = maxOxygen;

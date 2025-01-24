@@ -16,10 +16,10 @@ public class ItemPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hotbar == null)
-        {
-            Debug.LogError("U suck");
-        }
+        //if (hotbar == null)
+        //{
+        //    Debug.LogError("U suck");
+        //}
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -35,8 +35,7 @@ public class ItemPickup : MonoBehaviour
             }
         }
     }
-<<<<<<< Updated upstream
-=======
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Item"))
@@ -44,11 +43,15 @@ public class ItemPickup : MonoBehaviour
             WorldItem worldItem = collision.GetComponent<WorldItem>();
             hotbar.PickupItem(worldItem.item);
             collision.gameObject.SetActive(false);
+
             if (grapplingGun)
             {
                 grapplingGun.BreakGrapple();
             }
         }
     }
->>>>>>> Stashed changes
+
+        }
+    }
+
 }
