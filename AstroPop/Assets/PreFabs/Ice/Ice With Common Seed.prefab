@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3768731002975975081}
   - component: {fileID: 4765933346189095582}
   - component: {fileID: 5160451268882692722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice With Common Seed
   m_TagString: Item
   m_Icon: {fileID: 0}

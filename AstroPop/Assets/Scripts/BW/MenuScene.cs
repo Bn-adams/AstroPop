@@ -9,8 +9,10 @@ public class MenuScene : MonoBehaviour
     public Button startButton;
     public Button howToPlayButton;
     public Button quitButton;
-    public UnityEditor.SceneAsset gameScene;
-    public UnityEditor.SceneAsset howToPlayScene;
+    
+    public Scene GameScene;
+    public Scene HowToPlay;
+
    
     // Start is called before the first frame update
     void Start()
@@ -22,21 +24,19 @@ public class MenuScene : MonoBehaviour
             quitButton.onClick.AddListener(QuitGame);
 
         if (howToPlayButton != null)
-            howToPlayButton.onClick.AddListener(HowToPlay);
+            howToPlayButton.onClick.AddListener(HowToPlayScene);
     }
 
     void StartGame()
     {
 
-        string gameSceneString = gameScene.name;
-        SceneManager.LoadScene(gameSceneString);
+        
+        SceneManager.LoadScene(2);
     }
 
-    void HowToPlay()
+    void HowToPlayScene()
     {
-
-        string howToPlaySceneString = howToPlayScene.name;
-        SceneManager.LoadScene(howToPlaySceneString);
+        SceneManager.LoadScene(1);
     }
 
     void QuitGame()

@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BW/Menu.unity
     guid: eed7a234a37fa87469ce7b515caa1f9a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BA/Level1.4.unity
     guid: 2b86580e0ea2ac64aad02c42834f86dc
   - enabled: 0
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BW/HowToPlay.unity
     guid: de1739532466d404a9b911c02b45b0dd
+  - enabled: 1
+    path: Assets/Scenes/BA/Level1.6.unity
+    guid: b1faa3120017a0f44bca95f3fa5d04a5
   m_configObjects: {}

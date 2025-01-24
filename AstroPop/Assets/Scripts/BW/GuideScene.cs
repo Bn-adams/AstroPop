@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GuideScene : MonoBehaviour
 {
     public Button quitButton;
-    public UnityEditor.SceneAsset menuScene;
+    
    
    
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class GuideScene : MonoBehaviour
 
     void GoBack()
     {
-        string menuSceneString = menuScene.name;
-        SceneManager.LoadScene(menuSceneString);
+        
+        SceneManager.LoadScene(0);
     }
 }

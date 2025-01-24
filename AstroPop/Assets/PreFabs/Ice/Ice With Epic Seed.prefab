@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1498610874951108562}
   - component: {fileID: 8232589402381500282}
   - component: {fileID: 807546337033727166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice With Epic Seed
   m_TagString: Item
   m_Icon: {fileID: 0}
