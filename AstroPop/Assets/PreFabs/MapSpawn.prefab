@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6005120179616473821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3721968961169789728}
+  - component: {fileID: 251926931809016717}
+  m_Layer: 0
+  m_Name: MapSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3721968961169789728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005120179616473821}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &251926931809016717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005120179616473821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db209a2b8f2994548869ff77a2c8f493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawns:
+  - GameObject: {fileID: 7399199331970521887, guid: 94932ac4932de4d448340fd72a2904bb, type: 3}
+    SpawnChance: 100
+  - GameObject: {fileID: 1191785218392755500, guid: d526ae97c7a50e843b88b60e4ed2239c, type: 3}
+    SpawnChance: 10
+  - GameObject: {fileID: 7399199331970521887, guid: 409af6bb24aeae04caa72c7988e14856, type: 3}
+    SpawnChance: 100
+  - GameObject: {fileID: 8815178933460908532, guid: 8f54c0bef9793f8478bf496edb2be7cb, type: 3}
+    SpawnChance: 1
+  - GameObject: {fileID: 5119392041011178889, guid: d3a21d77e61287a44af13d1afcdd5ba5, type: 3}
+    SpawnChance: 5
+  ClearAreaNegativeExtent: {x: -12, y: -12}
+  ClearAreaPositiveExtent: {x: 12, y: 12}
+  radius: 13
+  regionSize: {x: 500, y: 500}
+  rejectionSamples: 7
+  displayRadius: 0.43

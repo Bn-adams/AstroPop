@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-
   - Interactable
   - Item
-
   layers:
   - Default
   - TransparentFX
@@ -18,7 +16,7 @@ TagManager:
   - 
   - 
   - 
-  - GrapplePoint
+  - Grapple
   - 
   - 
   - 

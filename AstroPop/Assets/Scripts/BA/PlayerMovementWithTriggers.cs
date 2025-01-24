@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovementWTigger: MonoBehaviour
@@ -7,14 +8,16 @@ public class PlayerMovementWTigger: MonoBehaviour
     public Animator animator;
     public float moveSpeed;
     private Vector2 movement;
-   
+  
+
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
+       
     }
 
     // Update is called once per frame
@@ -27,7 +30,7 @@ public class PlayerMovementWTigger: MonoBehaviour
 
 
         Triggers();
-
+        
     }
 
     private void FixedUpdate()
@@ -37,6 +40,7 @@ public class PlayerMovementWTigger: MonoBehaviour
 
         
     }
+   
 
     public void Triggers()
     {

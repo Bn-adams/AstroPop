@@ -31,7 +31,8 @@ public class AsteriodGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        points = PoissonDiscSampling.GeneratePoints(radius, regionSize, rejectionSamples);
+
         if (points != null && spawns.Length > 0)
         {
             Spawn();

@@ -148,8 +148,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0039999485, y: 0.05730009, z: 0}
-    m_Extent: {x: 7.4316998, y: 6.0622, z: 0}
+    m_Center: {x: 0.017649889, y: 0.058100224, z: 0}
+    m_Extent: {x: 7.41805, y: 6.0611, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -160,14 +160,12 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 5.95
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.3785279, y: -0.053978086, z: 0}
+  - {x: -1.4502283, y: -0.034946367, z: 0}
   - {x: 1.3852859, y: -0.053977966, z: 0}
   - {x: 1.4844685, y: -0.023366809, z: 0}
   - {x: 1.4887328, y: 0.1344117, z: 0}
   - {x: 1.3852859, y: 0.1688621, z: 0}
-  - {x: -1.3785281, y: 0.16886234, z: 0}
-  - {x: -1.4749465, y: 0.14720571, z: 0}
-  - {x: -1.4792107, y: -0.023365617, z: 0}
+  - {x: -1.4504831, y: 0.13852432, z: 0}
 --- !u!1 &7248921222458764766
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +193,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1460786903110628673}
   - {fileID: 5198270547636493102}
@@ -242,7 +240,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0ef8afbfeb4e88c49b60fdf1c7fea24c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

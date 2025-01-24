@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OxygenBar : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class OxygenBar : MonoBehaviour
         {
             privateVariables.OxygenAmount = privateVariables.OxygenAmount - 0.5f;
             oxygenDepleteTimer = 2f;
+        }
+        if(privateVariables.OxygenAmount < 1)
+        {
+            SceneManager.LoadScene(0);
         }
     }
     public void setOxygenBar(float oxygen)
