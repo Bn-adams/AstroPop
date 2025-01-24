@@ -20,6 +20,7 @@ public class OxygenStorage : MonoBehaviour, IInteractable
         privateVariables = GameObject.Find("Player").GetComponent<PrivateVariables>();
         hotbar = GameObject.Find("HotbarEmpty").GetComponent<HotbarV2>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
     // Take oxygen out
     public void InteractQ()

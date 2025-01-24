@@ -18,7 +18,7 @@ public class CarbonBar : MonoBehaviour
         carbonBar = GetComponent<Slider>();
         carbonBar.maxValue = maxCarbon;
         //Debug.Log(privateVariables.OxygenAmount);
-        privateVariables.OxygenAmount = 0;
+        privateVariables.CarbonAmount = 0;
         
     }
 

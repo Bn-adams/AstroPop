@@ -18,7 +18,7 @@ public class OxygenBar : MonoBehaviour
         oxygenBar = GetComponent<Slider>();
         oxygenBar.maxValue = maxOxygen;
         //Debug.Log(privateVariables.OxygenAmount);
-        privateVariables.OxygenAmount = maxOxygen;
+        privateVariables.OxygenAmount = 100;
         
     }
 
