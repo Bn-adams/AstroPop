@@ -26,6 +26,11 @@ public class AsteroidCollison : MonoBehaviour
         else
         {
             Debug.Log("Critical collision");
+            PlayerQTEScript player = collision.gameObject.GetComponent<PlayerQTEScript>();
+           if(player != null)
+           {
+               player.StartGame();
+           }
         }
     }
 }

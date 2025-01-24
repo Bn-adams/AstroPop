@@ -10,6 +10,7 @@ public class BasePointer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        
         targetPosition = new Vector3(0,0);
         pointerRectTransform = transform.Find("Pointer").GetComponent<RectTransform>();
     }
