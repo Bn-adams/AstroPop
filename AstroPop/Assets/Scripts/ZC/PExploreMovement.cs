@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PExploreMovement : MonoBehaviour
@@ -10,6 +11,7 @@ public class PExploreMovement : MonoBehaviour
     public bool isGrappling;
     public Rigidbody2D rb;
     public Transform gunPivot;
+    
     //[SerializeField] bool ReversedGrapple;
     [SerializeField] private Vector2 velocity;
     [SerializeField] private float speed;
@@ -18,7 +20,7 @@ public class PExploreMovement : MonoBehaviour
     void Start()
     {
       rb =  GetComponent<Rigidbody2D>();
-
+        
     }
     [SerializeField]   bool isInput;
     [SerializeField] bool ReversedGrapple;
@@ -66,5 +68,11 @@ public class PExploreMovement : MonoBehaviour
             
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxSpeed);
         }
+
+        if (!isGrappling)
+        {
+            
+        }
     }
+    
 }
