@@ -6,18 +6,20 @@ public class NIKAniTriggers : MonoBehaviour
 {
     private Animator IKanimator;
     public Rigidbody2D rb;
+    public PExploreMovement SwingPlayer;
 
 
     // Start is called before the first frame update
     void Start()
     {
         IKanimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        //rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 
         Debug.Log(rb.velocity.x);
 
@@ -50,6 +52,14 @@ public class NIKAniTriggers : MonoBehaviour
         else
         {
             IKanimator.SetBool("IsCollecting", false);
+        }
+        if(SwingPlayer.isGrappling = true)
+        {
+            IKanimator.SetBool("IsGrapple", true);
+        }
+        else
+        {
+            IKanimator.SetBool("IsGrapple", false);
         }
     }
 
