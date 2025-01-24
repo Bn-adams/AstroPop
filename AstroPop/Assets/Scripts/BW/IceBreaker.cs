@@ -29,7 +29,6 @@ public class IceBreaker : MonoBehaviour, IInteractable
     public GameObject AniClass;
     public GameObject IceSeed;
 
-
     
     void Start()
     {
@@ -64,9 +63,6 @@ public class IceBreaker : MonoBehaviour, IInteractable
         {
             TakeIceChunk();
         }
-
-
-       
     }
 
     void TakeIceChunk()
@@ -118,9 +114,6 @@ public class IceBreaker : MonoBehaviour, IInteractable
                 iceIsBraking = true;
             }
         }
-        // Change sprite maybe to show its broken
-        
-        
     }
 
     void ResetTable()
